@@ -1,0 +1,368 @@
+<div class="flex w-full">
+  <!-- left side navigation-->
+  <div
+    class="hidden lg:block xl:block"
+    [ngClass]="className === 'true' ? 'w-2/12' : 'w-1/12'"
+  >
+    <app-dashboard-navigation
+      [className]="className"
+    ></app-dashboard-navigation>
+  </div>
+  <!-- right side page content -->
+  <div
+    class="bg_dashboard_color min_100vh"
+    [ngClass]="
+      className === 'true'
+        ? 'w-full lg:w-10/12 xl:w-10/12'
+        : 'w-full lg:w-11/12 xl:w-11/12'
+    "
+  >
+    <!-- header -->
+    <div>
+      <app-dashboard-header
+        (newItemEvent)="addItem($event)"
+        [item]="currentItem"
+      ></app-dashboard-header>
+    </div>
+    <!-- filters -->
+    <div
+      class="
+        flex flex-col
+        lg:flex-row
+        xl:flex-row
+        justify-between
+        container
+        px-6
+        pt-6
+        mx-auto
+        dashboard_filters_container
+      "
+    >
+      <!-- left side -->
+      <div class="input_container w-full lg:w-7/12 xl:w-7/12">
+        <div class="flex">
+          <div class="w-8/12 flex justify-between">
+            <input
+              placeholder="Zoek op onderdeelnummer of titel"
+              class="input px-4 w-full py-2"
+            />
+            <div class="search_icon_container">
+              <img
+                src="../../../assets/images/magnifying-glass@3x.png"
+                class="h_15px absolute"
+              />
+            </div>
+          </div>
+          <div class="px-3">
+            <button
+              type="button"
+              class="
+                text_yellow text-center
+                border
+                rounded-lg
+                br_yellow
+                pl-3
+                pr-4
+                py-2
+                bg_buttonGray
+              "
+            >
+              Clear
+            </button>
+          </div>
+        </div>
+        <div class="py-3 px-1">
+          <div class="py-3 px-1 flex flex-wrap">
+            <div class="py-1 pr-3">
+              <label class="checkbox_container flex">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                <span class="checkbox_title">Alles</span>
+              </label>
+            </div>
+            <div class="py-1 pr-3">
+              <label class="checkbox_container flex">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                <span class="checkbox_title">Actief</span>
+              </label>
+            </div>
+            <div class="py-1 pr-3">
+              <label class="checkbox_container flex">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                <span class="checkbox_title">debit</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- right side -->
+      <div
+        class="
+          flex
+          justify-between
+          lg:justify-end
+          xl:justify-end
+          w-full
+          lg:w-5/12
+          xl:w-5/12
+          right_side_container right_advertentites
+        "
+      >
+        <div class="w-full lg:w-3/12 xl:w-3/12">
+          <button
+            class="
+              font-bold
+              py-2
+              px-4
+              w-full
+              rounded
+              flex
+              justify-center
+              items-center
+              bg_yellow
+              text_darkblue
+              rounded-lg
+            "
+          >
+            <span class="px-2">Nieuw</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- inputs -->
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col lg:flex-row xl:flex-row lg:justify-between">
+        <div
+          class="
+            flex flex-col
+            lg:flex-row
+            xl:flex-row
+            w-full
+            lg:w-8/12
+            xl:w-8/12
+          "
+        >
+          <!-- 1st input-->
+          <div class="flex flex-col py-2 w-full lg:w-5/12 xl:w-5/12">
+            <label class="opacity_8 text-white text-base py-2"
+              >Vanaf datum</label
+            >
+            <select
+              class="common_form_input w-full px-5 py-3"
+              placeholder="Meet Web IT"
+            >
+              <option>07/18/2021</option>
+            </select>
+          </div>
+          <!-- 2nd input-->
+          <div
+            class="
+              flex flex-col
+              py-2
+              px-0
+              lg:px-3
+              xl:px-3
+              w-full
+              lg:w-5/12
+              xl:w-5/12
+            "
+          >
+            <label class="opacity_8 text-white text-base py-2">Tot datum</label>
+            <select
+              class="common_form_input w-full px-5 py-3"
+              placeholder="Meet Web IT"
+            >
+              <option>07/18/2021</option>
+            </select>
+          </div>
+        </div>
+        <div
+          class="
+            flex flex-col
+            lg:flex-row
+            xl:flex-row
+            items-end
+            justify-end
+            w-full
+            lg:w-4/12
+            xl:w-4/12
+          "
+        >
+          <!-- 1st input-->
+          <div class="flex flex-col py-2 w-full lg:w-8/12 xl:w-8/12">
+            <select
+              class="common_form_input w-full px-5 py-3"
+              placeholder="Meet Web IT"
+            >
+              <option>Kies een actie</option>
+            </select>
+          </div>
+          <div class="px-3 w-full lg:w-4/12 xl:w-4/12 py-2">
+            <button
+              type="button"
+              class="
+                text_yellow text-center
+                border
+                rounded-lg
+                br_yellow
+                pl-3
+                pr-4
+                w-full
+                py-3
+                bg_buttonGray
+              "
+            >
+              Uitvoeren
+            </button>
+          </div>
+        </div>
+      </div>
+      <h4 class="opacity_8 text_darkGray text-base py-2">
+        Aantal resultaten: 0
+      </h4>
+    </div>
+    <!-- table -->
+    <div class="table_container container mx-auto py-4 px-6">
+      <div
+        class="br_radius6 table_responsive_width bg_component_color px-3 py-3"
+      >
+        <!-- header -->
+        <div class="w-full table_header br_radius10 py-3 px-1">
+          <ul class="list-none flex justify-between py-2">
+            <li class="w-1/12"></li>
+            <li class="w-1/12">Factuurnr.</li>
+            <li class="w-2/12">Datum</li>
+            <li class="w-1/12">Klant</li>
+            <li class="w-2/12">Betaalmethode</li>
+            <li class="w-1/12 px-1">Bedrag</li>
+            <li class="w-1/12 px-4">BTW</li>
+            <li class="w-1/12 px-1">Marge?</li>
+            <li class="w-1/12 px-5">Soort</li>
+            <li class="w-1/12"></li>
+          </ul>
+        </div>
+        <!-- body -->
+        <div class="w-full table_body br_radius10 py-3">
+          <ul
+            class="list-none flex justify-between data py-3"
+            *ngFor="let hero of HEROES; let i = index"
+          >
+            <li class="w-1/12 text-center px-5">
+              <label class="checkbox_container flex">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+              </label>
+            </li>
+            <li class="w-1/12 flex px-1">
+              {{ hero.Factuurnr }}
+            </li>
+            <li class="w-2/12 px-1">{{ hero.Datum }}</li>
+            <li class="w-1/12 px-1">{{ hero.Klant }}</li>
+            <li class="w-2/12 px-5">{{ hero.Betaalmethode }}</li>
+            <li class="w-1/12 px-1">{{ hero.Bedrag }}</li>
+            <li class="w-1/12 px-5">{{ hero.BTW }}</li>
+            <li class="w-1/12 px-8">{{ hero.Marge }}</li>
+            <li class="w-1/12 px-8">{{ hero.Soort }}</li>
+            <ul
+              class="w-1/12 px-3 flex justify-end py-2 cursor-pointer"
+              (click)="onItemClick(hero.id)"
+            >
+              <li class="open_moreDetail_popup">
+                <img
+                  src="../../../assets/images/dots.png"
+                  alt=""
+                  class="h_7px"
+                />
+              </li>
+              <ul
+                class="more_option_popup margin_top2"
+                [ngClass]="
+                  hero.id === itemId && showPopup ? '' : ' common_popup_id'
+                "
+              >
+                <ul class="list-none content_container">
+                  <li class="px-5 py-3" routerLink="/facturen2">Facturen</li>
+                  <!-- horizontal line -->
+                  <li class="hr_line"></li>
+                  <li class="px-5 py-3">Facturen</li>
+                </ul>
+              </ul>
+            </ul>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- pagination -->
+    <div
+      class="
+        flex
+        justify-between
+        container
+        mx-auto
+        px-6
+        pt-2
+        pb-10
+        flex-col-reverse
+        items-center
+        lg:flex-row
+        xl:flex-row
+        lg:items-start
+        xl:items-start
+      "
+    >
+      <!-- left side -->
+      <div class="py-5 lg:py-0 xl:py-0">
+        <p class="text_darkGray text-sm">Showing 14 out of 189 entries</p>
+      </div>
+      <!-- right side -->
+      <div>
+        <ul class="list-none flex items-center">
+          <li class="px-2 cursor-pointer pagination_arrow_color"><</li>
+          <li
+            class="
+              mx-1
+              pagination_page_number_padding
+              text-sm
+              bg_yellow
+              rounded-full
+              cursor-pointer
+              text-center
+            "
+          >
+            1
+          </li>
+          <li
+            class="
+              mx-1
+              pagination_page_number_padding
+              text-sm
+              cursor-pointer
+              rounded-full
+              cursor-pointer
+              pagination_inactive_number
+              text-center text_darkGray
+            "
+          >
+            2
+          </li>
+          <li
+            class="
+              pagination_page_number_padding
+              text-sm
+              cursor-pointer
+              rounded-full
+              cursor-pointer
+              pagination_inactive_number
+              text-center text_darkGray
+            "
+          >
+            3
+          </li>
+          <li class="px-2 cursor-pointer pagination_arrow_color">></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,84 @@
+.landing_pageHeader_container .logo_links_container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  padding: 10px;
+}
+.landing_pageHeader_container .hamburger span{
+  font-size: 30px; 
+  cursor: pointer;
+}
+.landing_pageHeader_container .logo_links_container .left_side{
+  width: 30%;
+}
+.landing_pageHeader_container .logo_links_container .right_side_container{
+  width: 55%;
+}
+.landing_pageHeader_container .logo_links_container .right_side_container ul li{
+  padding: 0px 8px;
+}
+.landing_pageHeader_container .logo_links_container .right_side_container ul li:hover{
+  color: #e4c218;
+}
+.landing_pageHeader_container .logo_links_container .right_side_container ul .button_container{
+  padding: 0px 5px;
+}
+.landing_pageHeader_container .logo_links_container .right_side_container ul .button_container button{
+  padding: 9px;
+  border-radius: 4px;
+}
+.landing_pageHeader_container .logo_links_container .right_side_container ul .button_container .btn2{
+  border: 2px solid #182e3f;
+  color: #e4c218;
+}
+.landing_pageHeader_container .logo_links_container .right_side_container ul .button_container .btn1:hover{
+  border: 2px solid #182e3f;
+  color: #e4c218;
+  background: #182e3f;
+}
+.landing_pageHeader_container .logo_links_container .right_side_container ul .button_container .btn1{
+  border: 2px solid #9fa4a7;
+  color: #535e63;
+}
+.reponsive_container .sidenav {
+  height: 100%;
+  width: 280px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.reponsive_container .sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.reponsive_container .sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.reponsive_container .sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .reponsive_container .sidenav {
+    padding-top: 15px;
+  }
+  .reponsive_container .sidenav a {
+    font-size: 18px;
+  }
+}

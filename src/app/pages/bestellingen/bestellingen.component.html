@@ -1,0 +1,165 @@
+<div class="flex w-full">
+  <!-- left side navigation-->
+  <div
+    class="hidden lg:block xl:block"
+    [ngClass]="className === 'true' ? 'w-2/12' : 'w-1/12'"
+  >
+    <app-dashboard-navigation
+      [className]="className"
+    ></app-dashboard-navigation>
+  </div>
+  <!-- right side page content -->
+  <div
+    class="bg_dashboard_color min_100vh"
+    [ngClass]="
+      className === 'true'
+        ? 'w-full lg:w-10/12 xl:w-10/12'
+        : 'w-full lg:w-11/12 xl:w-11/12'
+    "
+  >
+    <!-- header -->
+    <div>
+      <app-dashboard-header
+        (newItemEvent)="addItem($event)"
+        [item]="currentItem"
+      ></app-dashboard-header>
+    </div>
+    <!-- filters -->
+    <div
+      class="
+        flex flex-col
+        lg:flex-row
+        xl:flex-row
+        justify-between
+        container
+        px-6
+        py-6
+        mx-auto
+        dashboard_filters_container
+      "
+    >
+      <!-- left side -->
+      <div class="input_container w-full lg:w-5/12 xl:w-5/12">
+        <div class="w-full flex justify-between">
+          <input
+            placeholder="Zoek op onderdeelnummer of titel"
+            class="input px-4 w-full py-2"
+          />
+          <div class="search_icon_container">
+            <img
+              src="../../../assets/images/magnifying-glass@3x.png"
+              class="h_15px absolute"
+            />
+          </div>
+        </div>
+        <div class="info py-3 px-1">
+          <p>Order ID is hoofdlettergevoelig</p>
+        </div>
+      </div>
+      <!-- right side -->
+      <div
+        class="
+          flex
+          justify-between
+          lg:justify-end
+          xl:justify-end
+          w-full
+          lg:w-5/12
+          xl:w-5/12
+          right_side_container
+        "
+      >
+        <div class="checkboxes_container px-4 py-2 mx-0 lg:mx-4 xl:mx-4">
+          <label class="checkbox_container flex">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+            <span class="checkbox_title">Order ID</span>
+          </label>
+        </div>
+        <div class="checkboxes_container px-4 py-2">
+          <label class="checkbox_container flex">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+            <span class="checkbox_title">Email ID</span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <!-- table -->
+    <div class="table_container container mx-auto px-6 py-3">
+      <div
+        class="br_radius6 table_responsive_width bg_component_color px-3 py-3"
+      >
+        <!-- header -->
+        <div class="w-full table_header br_radius10 py-3 px-1">
+          <ul class="list-none flex justify-between">
+            <li class="w-1/12"></li>
+            <li class="w-1/12">Betaalstatus</li>
+            <li class="w-1/12">Afhalen</li>
+            <li class="w-1/12">Klant</li>
+            <li class="w-1/12">Order ID</li>
+            <li class="w-2/12">Aangemaakt op</li>
+            <li class="w-1/12">Aantal prod.</li>
+            <li class="w-1/12">Totaal</li>
+            <li class="w-1/12">Verzendstatus</li>
+            <li class="w-1/12"></li>
+          </ul>
+        </div>
+        <!-- body -->
+        <div class="w-full table_body br_radius10 py-3">
+          <ul
+            class="list-none flex justify-between py-3 data"
+            *ngFor="let hero of HEROES; let i = index"
+          >
+            <li class="w-1/12 text-center px-5">
+              <label class="checkbox_container flex">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+              </label>
+            </li>
+            <li class="w-1/12 flex px-1">
+              <label class="checkbox_container flex">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+              </label>
+            </li>
+            <li class="w-1/12 px-1">{{ hero.afhalen }}</li>
+            <li class="w-1/12 px-1">{{ hero.klant }}</li>
+            <li class="w-1/12">{{ hero.orderId }}</li>
+            <li class="w-2/12">{{ hero.AangemaaktOp }}</li>
+            <li class="w-1/12">{{ hero.AantalProd }}</li>
+            <li class="w-1/12">{{ hero.total }}</li>
+            <li class="w-1/12">{{ hero.Verzendstatus }}</li>
+            <ul
+              class="w-1/12 px-3 flex justify-end items-center cursor-pointer"
+              (click)="onItemClick(hero.id)"
+            >
+              <li class="open_moreDetail_popup cursor-pointer">
+                <img
+                  src="../../../assets/images/dots.png"
+                  alt=""
+                  class="h_7px"
+                />
+              </li>
+              <ul
+                class="more_option_popup margin_top"
+                [ngClass]="
+                  hero.id === itemId && showPopup ? '' : ' common_popup_id'
+                "
+              >
+                <ul class="list-none content_container">
+                  <li class="px-5 py-3" routerLink="/bestellingen2">
+                    Bekiiikin
+                  </li>
+                  <!-- horizontal line -->
+                  <li class="hr_line"></li>
+                  <li class="px-5 py-3">Facturen</li>
+                </ul>
+              </ul>
+            </ul>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

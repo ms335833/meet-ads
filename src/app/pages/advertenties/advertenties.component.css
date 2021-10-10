@@ -1,0 +1,35 @@
+.dashboard_filters_container
+  .right_advertentites
+  .advert_button_container
+  button {
+  background-color: #f3cc09;
+  border-radius: 12px;
+}
+.dashboard_filters_container
+  .right_advertentites
+  .advert_button_container
+  button
+  span {
+  color: #212e37;
+}
+.select_filters .select_filters_advertenties p {
+  color: #fff;
+  opacity: 0.8;
+  width: 100%; 
+}
+.select_filters .select_filters_advertenties h6 {
+  color: #ffd500;
+}
+.select_filters .hr_line {
+    opacity: 0.28;
+    height: 1px;
+    background-color: #ffffff;
+}
+.modal_container .hr_line{
+    opacity: 0.2;
+    background-color: #fff;
+    height: 1px;
+}
+/* #modal1{
+  display: none;
+} */

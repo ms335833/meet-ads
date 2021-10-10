@@ -1,0 +1,57 @@
+.bedrijf_container .links_container {
+  border-bottom: 1px solid #37434a;
+}
+.bedrijf_container .links_container .active_button button {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: #ffd500;
+  color: #16242d;
+}
+.bedrijf_container .links_container .inActive_button button {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: #424c57;
+  color: #fff;
+}
+.bedrijf_container .links_container .inActive_button button:hover {
+  background-color: #ffd500;
+  color: #16242d;
+}
+
+@media (max-width: 1024px) and (min-width: 320px) {
+  .bedrijf_container .links_container .inActive_button {
+    width: 50%;
+  }
+  .bedrijf_container .links_container .inActive_button button {
+    width: 100%;
+  }
+  .bedrijf_container .links_container .active_button {
+    width: 50%;
+  }
+  .bedrijf_container .links_container .active_button button {
+    width: 100%;
+  }
+}
+
+/* custom file upload button */
+.custom_file_uploadBtn .upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  margin: 5px 0px;
+  display: inline-block;
+}
+
+.custom_file_uploadBtn .btn {
+  border: 1px dotted #ffd500;
+  background-color: #44515b;
+  border-radius: 8px;
+}
+
+.custom_file_uploadBtn .upload-btn-wrapper input[type="file"] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  width: inherit;
+  top: 0;
+  opacity: 0;
+}

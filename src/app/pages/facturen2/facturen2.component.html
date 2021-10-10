@@ -1,0 +1,362 @@
+<div class="flex w-full">
+  <!-- left side navigation-->
+  <div
+    class="hidden lg:block xl:block"
+    [ngClass]="className === 'true' ? 'w-2/12' : 'w-1/12'"
+  >
+    <app-dashboard-navigation
+      [className]="className"
+    ></app-dashboard-navigation>
+  </div>
+  <!-- right side page content -->
+  <div
+    class="bg_dashboard_color min_100vh pb-5"
+    [ngClass]="
+      className === 'true'
+        ? 'w-full lg:w-10/12 xl:w-10/12'
+        : 'w-full lg:w-11/12 xl:w-11/12'
+    "
+  >
+    <!-- header -->
+    <div>
+      <app-dashboard-header
+        (newItemEvent)="addItem($event)"
+        [item]="currentItem"
+      ></app-dashboard-header>
+    </div>
+    <div class="container mx-auto px-6 py-4">
+      <!-- buttons -->
+      <!-- <div class="flex flex-wrap items-center">
+        <div class="py-1">
+          <h4 class="text-white text-md">Acties:</h4>
+        </div>
+        <div class="py-1">
+          <button
+            class="
+              rounded
+              mx-2
+              my-1
+              flex
+              text-sm
+              py-2
+              px-2
+              text-black
+              bg_yellow
+              cursor-pointer
+            "
+          >
+            Terug
+          </button>
+        </div>
+        <div class="py-1">
+          <button
+            class="
+              rounded
+              mx-2
+              flex
+              text-sm
+              py-2
+              px-2
+              text-black
+              bg_yellow
+              cursor-pointer
+            "
+          >
+            Download
+          </button>
+        </div>
+        <div class="py-1">
+          <button
+            class="
+              rounded
+              mx-2
+              flex
+              text-sm
+              py-2
+              px-2
+              text-black
+              bg_yellow
+              cursor-pointer
+            "
+          >
+            Crediteren
+          </button>
+        </div>
+        <div class="py-1">
+          <button
+            class="
+              rounded
+              mx-2
+              flex
+              text-sm
+              py-2
+              px-2
+              text-black
+              bg_yellow
+              cursor-pointer
+            "
+          >
+            Verzenden
+          </button>
+        </div>
+      </div> -->
+      <div class="py-5">
+        <h4 class="text-center text-white text-lg font-semibold">
+          Debitfactuur
+        </h4>
+      </div>
+      <div
+        class="bg_component_color rounded-lg px-3 tractie_add_cart_component"
+      >
+        <div class="py-5 w-full">
+          <!-- left side -->
+          <div class="px-4 w-full lg:w-6/12 xl:w-6/12 font-semibold">
+            <h4 class="text-base text_yellow">Gefactureerd door</h4>
+            <h4 class="text-base text_darkGray">OTOSAN AUTOMOTIVE B.V.</h4>
+            <h4 class="text-base text_darkGray">ARKANSASSDREED 21</h4>
+            <h4 class="text-base text_darkGray">3565AP UTRECHT</h4>
+            <h4 class="text-base text_darkGray">NEDERLAND</h4>
+          </div>
+        </div>
+        <div class="py-5 w-full">
+          <!-- left side -->
+          <div class="px-4 w-full lg:w-6/12 xl:w-6/12 font-semibold">
+            <h4 class="text-base text_yellow">Gefactureerd aan</h4>
+            <h4 class="text-base text_darkGray">PASSANT</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mx-auto px-7 pt-3">
+      <div class="modal_hr_line2"></div>
+    </div>
+    <!-- table -->
+    <div class="container mx-auto px-6">
+      <div class="table_container container mx-auto py-4 px-2 w-full">
+        <div
+          class="
+            br_radius6
+            table_responsive_width
+            bg_component_color
+            px-3
+            py-3
+            w-full
+          "
+        >
+          <!-- header -->
+          <div class="w-full table_header br_radius10 py-3 px-1">
+            <ul class="list-none flex justify-between py-2">
+              <li class="w-3/12 px-1">Product</li>
+              <li class="w-2/12">Antal</li>
+              <li class="w-3/12">Prijis</li>
+              <li class="w-2/12 px-1">BTW</li>
+              <li class="w-2/12"></li>
+            </ul>
+          </div>
+          <!-- body -->
+          <div class="w-full table_body br_radius10 py-3">
+            <ul
+              class="list-none flex justify-between data py-3"
+              *ngFor="let hero of HEROES2; let i = index"
+            >
+              <li class="w-3/12 px-2">{{ hero.product }}</li>
+              <li class="w-2/12 px-1">{{ hero.antal }}</li>
+              <li class="w-3/12 px-1">{{ hero.prijis }}</li>
+              <li class="w-2/12 px-1">{{ hero.btw }}</li>
+              <li class="w-2/12 flex">
+                <button
+                  class="
+                    rounded
+                    mx-2
+                    flex
+                    text-sm
+                    py-2
+                    px-2
+                    text-black
+                    bg_yellow
+                    cursor-pointer
+                  "
+                >
+                  Terugnemen
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mx-auto px-6">
+      <div class="modal_hr_line2"></div>
+      <div class="py-5">
+        <label class="text-white px-2">Interne opmerkingen</label>
+        <div class="flex py-2 flex-col lg:flex-row xl:flex-row">
+          <div class="w-full">
+            <textarea
+              rows="5"
+              class="common_form_input w-full px-5 py-3"
+              placeholder="Bijvoorbeeld 3 maanden"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mx-auto px-6">
+      <!-- total detail -->
+      <div
+        class="
+          px-3
+          flex flex-col
+          lg:flex-row lg:justify-between
+          bg_component_color
+          py-6
+          rounded-lg
+        "
+      >
+        <!-- left side -->
+        <div>
+          <h4 class="text-base text_yellow">Factuurgebeurtenissen</h4>
+          <h4 class="text-md text-white opacity_8 py-1">
+            11 Aug 2021 17:41 | info@otosan.nl : betaalde transactie
+          </h4>
+          <h4 class="text-md text_darkGray opacity_8 py-1 m-0">
+            geregistreerd
+          </h4>
+        </div>
+        <!-- right side -->
+        <div>
+          <h4 class="text-base text_yellow">SubTotaal € 399,00</h4>
+          <h4 class="text-md text-white opacity_8 py-1 m-0">BTW € 83.79</h4>
+          <h4 class="text-md text_darkGray opacity_8 m-0 py-1">
+            Totaal € 482,79
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- modal -->
+  <div
+    class="fixed z-10 inset-0 overflow-y-auto modal_container"
+    aria-labelledby="modal-title"
+    role="dialog"
+    aria-modal="true"
+    id="modal1"
+    *ngIf="popup"
+  >
+    <div
+      class="
+        flex
+        items-end
+        justify-center
+        min-h-screen
+        pt-4
+        pb-20
+        px-3
+        text-center
+        sm:block sm:p-0
+      "
+    >
+      <div
+        class="
+          fixed
+          inset-0
+          bg-gray-500 bg-opacity-75
+          transition-opacity
+          cursor-pointer
+        "
+        aria-hidden="true"
+        (click)="closeNav()"
+      ></div>
+      <span
+        class="
+          hidden
+          sm:inline-block sm:align-middle sm:h-screen
+          cursor-pointer
+        "
+        aria-hidden="true"
+        (click)="closeNav()"
+        >&#8203;</span
+      >
+      <div
+        class="
+          inline-block
+          align-bottom
+          bg_darkblue3
+          rounded-lg
+          text-left
+          overflow-hidden
+          shadow-xl
+          transform
+          transition-all
+          sm:my-8 sm:align-middle sm:max-w-lg sm:w-full
+        "
+      >
+        <div class="bg_darkblue3 pt-4 pb-3 w-full">
+          <div class="sm:flex sm:items-start w-full">
+            <div class="mt-2 text-center sm:mt-0 sm:text-left w-full">
+              <div class="flex justify-end px-4 w-full">
+                <div class="cursor-pointer" (click)="closeNav()">
+                  <img
+                    src="./assets/images/cancel(1)@3x.png"
+                    alt=""
+                    class="h_14px"
+                  />
+                </div>
+              </div>
+              <div class="hr_line mt-2"></div>
+              <div class="table_container container mx-auto py-4 px-2 w-full">
+                <div
+                  class="
+                    br_radius6
+                    table_responsive_width
+                    bg_component_color
+                    px-3
+                    py-3
+                    w-full
+                  "
+                >
+                  <!-- header -->
+                  <div class="w-full table_header br_radius10 py-3 px-1">
+                    <ul class="list-none flex justify-between py-2">
+                      <li class="w-3/12 px-1">Datum</li>
+                      <li class="w-5/12 px-4">Product</li>
+                      <li class="w-2/12 px-1">Bedrag</li>
+                      <li class="w-2/12">Acties</li>
+                    </ul>
+                  </div>
+                  <!-- body -->
+                  <div class="w-full table_body br_radius10 py-3">
+                    <ul
+                      class="list-none flex justify-between data py-3"
+                      *ngFor="let hero of HEROES; let i = index"
+                    >
+                      <li class="w-3/12 px-1">{{ hero.datum }}</li>
+                      <li class="w-5/12 px-1">{{ hero.product }}</li>
+                      <li class="w-2/12 px-1">{{ hero.bedrag }}</li>
+                      <li class="w-2/12">
+                        <button
+                          class="
+                            w-full
+                            rounded
+                            flex
+                            text-sm
+                            py-2
+                            px-2
+                            text-black
+                            bg_yellow
+                            cursor-pointer
+                          "
+                        >
+                          Bekijken
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

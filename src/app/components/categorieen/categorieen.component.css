@@ -1,0 +1,9 @@
+.categorieen_collapsible_component .collapse_container {
+  background-color: #44515b;
+}
+.categorieen_collapsible_component .collapse_container:hover {
+  background-color: #3f4a53;
+}
+.categorieen_collapsible_component .collapse_container .common_collapse_body{
+  display: none;
+}

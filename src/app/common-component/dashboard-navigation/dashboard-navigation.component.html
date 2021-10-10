@@ -1,0 +1,244 @@
+<div class="w-full dashboard_sidenav_container py-6 h-full">
+  <!-- logo -->
+  <div class="px-5">
+    <img src="../../../assets/images/logo.png" alt="logo" class="h_80px" />
+  </div>
+  <div class="w-full flex flex-col py-12 navigation_container px-6">
+    <!-- dashboard -->
+    <div class="py-3">
+      <div
+        class="flex items-center py-2 w-full"
+        routerLink="/dashboard"
+        [ngClass]="
+          activeRoute === '/dashboard' ? ' active_link' : ' inActive_link'
+        "
+      >
+        <div
+          class="flex items-center w-full"
+          [ngClass]="
+            className === 'false' ? 'justify-center px-4' : ' pl-4 pr-6'
+          "
+        >
+          <img
+            src="../../../assets/images/pie-chart-finances@3x.png"
+            class="active_img h_18px"
+          />
+          <img
+            src="../../../assets/images/pie-chart-finances.png"
+            class="inActive_img h_18px"
+          />
+          <div [ngClass]="className === 'true' ? ' block' : ' hidden'">
+            <h6 class="m-0 px-3 text-md pt-1">Dashboard</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bestellingen -->
+    <div class="py-3">
+      <div
+        class="flex items-center py-2"
+        routerLink="/bestellingen"
+        [ngClass]="
+          activeRoute === '/bestellingen' || activeRoute === '/bestellingen2'
+            ? ' active_link'
+            : ' inActive_link'
+        "
+      >
+        <div
+          class="flex items-center w-full"
+          [ngClass]="
+            className === 'false' ? 'justify-center px-4' : ' pl-4 pr-6'
+          "
+        >
+          <img
+            src="../../../assets/images/shopping-list@3x.png"
+            class="active_img h_18px"
+          />
+          <img
+            src="../../../assets/images/shopping-list@3x(1).png"
+            class="inActive_img h_18px"
+          />
+          <div [ngClass]="className === 'true' ? ' block' : ' hidden'">
+            <h6 class="m-0 px-3 text-md pt-1">Bestellingen</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Advertenties -->
+    <div class="py-3">
+      <div
+        class="flex items-center py-2"
+        routerLink="/advertenties"
+        [ngClass]="
+          activeRoute === '/advertenties' || activeRoute === '/advertenties2'
+            ? ' active_link'
+            : ' inActive_link'
+        "
+      >
+        <div
+          class="flex items-center w-full"
+          [ngClass]="
+            className === 'false' ? 'justify-center px-4' : ' pl-4 pr-6'
+          "
+        >
+          <img
+            src="../../../assets/images/settings_black_24dp@3x1.png"
+            class="active_img h_18px"
+          />
+          <img
+            src="../../../assets/images/settings_black_24dp@3x.png"
+            class="inActive_img h_18px"
+          />
+          <div [ngClass]="className === 'true' ? ' block' : ' hidden'">
+            <h6 class="m-0 px-3 text-md pt-1">Advertenties</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bedrijf  -->
+    <div class="py-3">
+      <div
+        class="flex items-center py-2"
+        routerLink="/bedrijf"
+        [ngClass]="
+          activeRoute === '/bedrijf' ? ' active_link' : ' inActive_link'
+        "
+      >
+        <div
+          class="flex items-center w-full"
+          [ngClass]="
+            className === 'false' ? 'justify-center px-4' : ' pl-4 pr-6'
+          "
+        >
+          <img
+            src="../../../assets/images/business-and-trade@3x(1).png"
+            class="active_img h_18px"
+          />
+          <img
+            src="../../../assets/images/business-and-trade@3x.png"
+            class="inActive_img h_18px"
+          />
+          <div [ngClass]="className === 'true' ? ' block' : ' hidden'">
+            <h6 class="m-0 px-3 text-md pt-1">Bedrijf</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Webshop  -->
+    <div class="py-3">
+      <div
+        class="flex items-center py-2"
+        routerLink="/webshop"
+        [ngClass]="
+          activeRoute === '/webshop' ? ' active_link' : ' inActive_link'
+        "
+      >
+        <div
+          class="flex items-center w-full"
+          [ngClass]="
+            className === 'false' ? 'justify-center px-4' : ' pl-4 pr-6'
+          "
+        >
+          <img
+            src="../../../assets/images/signal.png"
+            class="active_img h_18px"
+          />
+          <img
+            src="../../../assets/images/signal@3x.png"
+            class="inActive_img h_18px"
+          />
+          <div [ngClass]="className === 'true' ? ' block' : ' hidden'">
+            <h6 class="m-0 px-3 text-md pt-1">Webshop</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Klanten  -->
+    <div class="py-3">
+      <div
+        class="flex items-center py-2"
+        routerLink="/klanten"
+        [ngClass]="
+          activeRoute === '/klanten' ? ' active_link' : ' inActive_link'
+        "
+      >
+        <div
+          class="flex items-center w-full"
+          [ngClass]="
+            className === 'false' ? 'justify-center px-4' : ' pl-4 pr-6'
+          "
+        >
+          <img
+            src="../../../assets/images/customer.png"
+            class="active_img h_18px"
+          />
+          <img
+            src="../../../assets/images/customer@3x.png"
+            class="inActive_img h_18px"
+          />
+          <div [ngClass]="className === 'true' ? ' block' : ' hidden'">
+            <h6 class="m-0 px-3 text-md pt-1">Klanten</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Facturen  -->
+    <div class="py-3">
+      <div
+        class="flex items-center py-2"
+        routerLink="/facturen"
+        [ngClass]="
+          activeRoute === '/facturen' || activeRoute === '/facturen2' ? ' active_link' : ' inActive_link'
+        "
+      >
+        <div
+          class="flex items-center w-full"
+          [ngClass]="
+            className === 'false' ? 'justify-center px-4' : ' pl-4 pr-6'
+          "
+        >
+          <img
+            src="../../../assets/images/invoices.png"
+            class="active_img h_18px"
+          />
+          <img
+            src="../../../assets/images/invoices@3x.png"
+            class="inActive_img h_18px"
+          />
+          <div [ngClass]="className === 'true' ? ' block' : ' hidden'">
+            <h6 class="m-0 px-3 text-md pt-1">Facturen</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Transactie  -->
+    <div class="py-3">
+      <div
+        class="flex items-center py-2"
+        routerLink="/transactie"
+        [ngClass]="
+          activeRoute === '/transactie' ? ' active_link' : ' inActive_link'
+        "
+      >
+        <div
+          class="flex items-center w-full"
+          [ngClass]="
+            className === 'false' ? 'justify-center px-4' : ' pl-4 pr-6'
+          "
+        >
+          <img
+            src="../../../assets/images/transaction.png"
+            class="active_img h_18px"
+          />
+          <img
+            src="../../../assets/images/transaction@3x.png"
+            class="inActive_img h_18px"
+          />
+          <div [ngClass]="className === 'true' ? ' block' : ' hidden'">
+            <h6 class="m-0 px-3 text-md pt-1">Transactie</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

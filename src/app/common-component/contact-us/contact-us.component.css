@@ -1,0 +1,355 @@
+/* Common Color CLass */
+.section_contact_us_bg_yellow {
+  background-color: rgba(251, 191, 36);
+}
+.section_contact_us_bg__bg_gray {
+  background-color: rgba(229, 231, 235);
+}
+/* Common Padding */
+.padding-y-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+/* Section Contact Us */
+.common_contact-Container {
+  overflow: hidden !important;
+}
+.section_contact_us {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.section_contact_us .section_contact_us_left_side {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  width: 41.666667%;
+}
+.section_contact_us
+  .section_contact_us_left_side
+  .section_contact_us_left_side_heading
+  h4 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: left;
+  font-weight: 700;
+}
+.section_contact_us
+  .section_contact_us_left_side
+  .section_contact_us_common_collapse {
+  cursor: pointer;
+  border-radius: 0.25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 66.666667%;
+}
+.section_contact_us .section_contact_us_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.section_contact_us .section_contact_us_header p {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.section_contact_us .contact_us_body_description {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.section_contact_us .contact_us_body_description p {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.section_contact_us .section_contact_us_left_side_adress_content {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+.section_contact_us .section_contact_us_left_side_adress_content h4 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  text-align: left;
+  font-weight: 700;
+}
+.section_contact_us_left_side_adress_content_google_map {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.section_contact_us_left_side_google_map_image {
+  width: 25%;
+}
+.section_contact_us_left_side_google_map_image img {
+  width: 100%;
+}
+.section_contact_us .contact_us_google_map_inner {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.section_contact_us .contact_us_google_map_inner_heading {
+  display: flex;
+  align-items: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.section_contact_us .contact_us_google_map_inner_heading p {
+  color: rgba(245, 158, 11);
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.section_contact_us .contact_us_google_map_inner__address {
+  width: 41.666667%;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.section_contact_us .contact_us_google_map_inner__address p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: left;
+}
+.section_contact_us .section_contact_us_right_side {
+  width: 41.666667%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section_contact_us
+  .section_contact_us_right_side
+  .section_contact_us_right_side_inner
+  h4 {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: left;
+}
+
+.section_contact_us
+  .section_contact_us_right_side
+  .section_contact_us_right_side_inner
+  p {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: left;
+}
+.section_contact_us
+  .section_contact_us_right_side
+  .section_contact_us_right_side_button_content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.section_contact_us .section_contact_us_right_side_contact_button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-width: 1px;
+  border-color: rgba(245, 158, 11);
+  color: rgba(245, 158, 11);
+  border-radius: 0.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  text-align: center;
+}
+.section_contact_us .section_contact_us_right_side_contact_button:hover {
+  color: white;
+  background-color: rgba(245, 158, 11);
+}
+
+.section_contact_us .section_contact_us_right_side_contact_mail_main {
+  width: 41.666667%;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.section_contact_us .section_contact_us_right_side_contact_mail_main button {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.section_contact_us .section_contact_us_right_side_contact_mail_main span {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.section_contact_us_right_side_form_container {
+  display: flex;
+  justify-content: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.section_contact_us_right_side_form_inner {
+  width: 83.333333%;
+  border-radius: 0.25rem;
+}
+
+.section_contact_us_right_side_form_container
+  .section_contact_us_right_side_form_inner
+  .section_contact_us_right_side_form_main {
+  width: 100%;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.section_contact_us_right_side_form_inner
+  .section_contact_us_right_side_form_title
+  h4 {
+  color: rgba(245, 158, 11);
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.section_contact_us_right_side_form_inner
+  .section_contact_us_right_side_form_input {
+  border-width: 1px;
+  border-color: rgba(255, 255, 255);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-radius: 0.25rem;
+  color: white;
+  background-color: transparent;
+  width: 100%;
+  outline: none;
+}
+.section_contact_us_right_side_form_inner
+  .section_contact_us_right_side_form_button {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.section_contact_us_right_side_form_button button {
+  border: 1px solid rgba(245, 158, 11) !important;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  border-radius: 0.25rem;
+  color: rgba(245, 158, 11);
+}
+.section_contact_us_right_side_form_inner
+  .section_contact_us_right_side_form_button
+  button:hover {
+  color: white;
+  background-color: rgba(245, 158, 11);
+}
+/* Media Query */
+
+@media (max-width: 1024px) and (min-width: 320px) {
+  .section_contact_us {
+    flex-direction: column;
+  }
+  .section_contact_us_left_side {
+    width: 100%;
+  }
+  .section_contact_us_left_side_heading h4 {
+    text-align: center;
+  }
+  .section_contact_us
+    .section_contact_us_left_side
+    .section_contact_us_common_collapse {
+    width: 100%;
+  }
+  .section_contact_us .section_contact_us_left_side {
+    width: 100%;
+  }
+  .section_contact_us .section_contact_us_left_side_adress_content h4 {
+    text-align: center;
+  }
+  .section_contact_us_left_side_adress_content_google_map {
+    align-items: center;
+    flex-direction: column;
+  }
+  .section_contact_us .contact_us_google_map_inner {
+    align-items: center;
+  }
+  .section_contact_us .contact_us_google_map_inner__address {
+    width: 100%;
+  }
+  .section_contact_us .contact_us_google_map_inner__address p {
+    text-align: center;
+  }
+  .section_contact_us .section_contact_us_right_side {
+    width: 100%;
+  }
+  .section_contact_us
+    .section_contact_us_right_side
+    .section_contact_us_right_side_inner
+    h4 {
+    text-align: center;
+  }
+  .section_contact_us
+    .section_contact_us_right_side
+    .section_contact_us_right_side_inner
+    p {
+    text-align: center;
+  }
+  .section_contact_us
+    .section_contact_us_right_side
+    .section_contact_us_right_side_button_content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .section_contact_us .section_contact_us_right_side_contact_mail_main {
+    width: 58.333333%;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+  .section_contact_us_right_side_form_container
+    .section_contact_us_right_side_form_inner
+    .section_contact_us_right_side_form_main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .section_contact_us_right_side_form_inner
+    .section_contact_us_right_side_form_button {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./assets/style/index.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.lato_font {
+  font-family: "Lato", sans-serif !important;
+}
+
+/* popup width */
+@media (min-width: 640px) {
+  .modal_content_container_width {
+    min-width: 40rem!important;
+  }
+}

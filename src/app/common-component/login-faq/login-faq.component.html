@@ -1,0 +1,159 @@
+<div class="w-full flex flex-col px-3">
+  <div class="w-full">
+    <!-- title -->
+    <div>
+      <h4
+        class="
+          text-3xl
+          py-4
+          text-center text-white
+          lg:text-left
+          xl:text-left
+          font-bold
+        "
+      >
+        Faq
+      </h4>
+    </div>
+    <div>
+      <!-- collapse 1-->
+      <div
+        class="
+          common_collapse
+          w-full
+          my-2
+          rounded
+          cursor-pointer
+        "
+        [ngClass]="
+          activeCollapse === '1' ? ' bg-yellow-400' : ' bg_component_color2'
+        "
+        (click)="div1Function('1')"
+      >
+        <!-- header -->
+        <div class="flex justify-between px-3 items-center py-3">
+          <p
+            class="font-bold text-base"
+            [ngClass]="activeCollapse === '1' ? ' text-black' : ' text-white'"
+          >
+            Lorem ipsum dolor sit amet?
+          </p>
+          <div>
+            <img
+              *ngIf="!div1"
+              src="../../../assets/images/downArrow.png"
+              alt=""
+              class="h_10px"
+            />
+            <img
+              *ngIf="div1"
+              src="../../../assets/images/upArrow.png"
+              alt=""
+              class="h_10px"
+            />
+          </div>
+        </div>
+        <!-- body -->
+        <div class="px-3 py-2" *ngIf="div1">
+          <p class="text-sm text_darkblue2">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam
+          </p>
+        </div>
+      </div>
+      <!-- collapse 2-->
+      <div
+        class="
+          common_collapse
+          w-full
+          my-2
+          rounded
+          cursor-pointer
+        "
+        [ngClass]="
+          activeCollapse === '2' ? ' bg-yellow-400' : ' bg_component_color2'
+        "
+        (click)="div1Function('2')"
+      >
+        <!-- header -->
+        <div class="flex justify-between px-3 items-center py-3">
+          <p
+            class="font-bold text-base"
+            [ngClass]="activeCollapse === '2' ? ' text-black' : ' text-white'"
+          >
+            Lorem ipsum dolor sit amet?
+          </p>
+          <div class="">
+            <img
+              *ngIf="!div2"
+              src="../../../assets/images/downArrow.png"
+              alt=""
+              class="h_10px"
+            />
+            <img
+              *ngIf="div2"
+              src="../../../assets/images/upArrow.png"
+              alt=""
+              class="h_10px"
+            />
+          </div>
+        </div>
+        <!-- body -->
+        <div class="px-3 py-2" *ngIf="div2">
+          <p class="text-sm text_darkblue2">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam
+          </p>
+        </div>
+      </div>
+      <!-- collapse 3-->
+      <div
+        class="
+          common_collapse
+            w-full
+          my-2
+          rounded
+          cursor-pointer
+        "
+        (click)="div1Function('3')"
+        [ngClass]="
+          activeCollapse === '3' ? ' bg-yellow-400' : ' bg_component_color2'
+        "
+      >
+        <!-- header -->
+        <div class="flex justify-between px-3 items-center py-3">
+          <p
+            class="font-bold text-base"
+            [ngClass]="activeCollapse === '3' ? ' text-black' : ' text-white'"
+          >
+            Lorem ipsum dolor sit amet?
+          </p>
+          <div class="">
+            <img
+              *ngIf="!div3"
+              src="../../../assets/images/downArrow.png"
+              alt=""
+              class="h_10px"
+            />
+            <img
+              *ngIf="div3"
+              src="../../../assets/images/upArrow.png"
+              alt=""
+              class="h_10px"
+            />
+          </div>
+        </div>
+        <!-- body -->
+        <div class="px-3 py-2" *ngIf="div3">
+          <p class="text-sm text_darkblue2">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

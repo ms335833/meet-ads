@@ -1,0 +1,32 @@
+.fs_13px {
+  font-size: 13px;
+}
+.fs_15px {
+  font-size: 15px;
+}
+.fs_18 {
+  font-size: 18px !important;
+}
+.fs_20 {
+  font-size: 20px !important;
+}
+.fs_21 {
+  font-size: 21px;
+}
+.fs_22 {
+  font-size: 22px;
+}
+.f_35 {
+  font-size: 35px;
+}
+.f_38 {
+  font-size: 38px;
+}
+
+
+.font_medium{
+  font-weight: 500;
+}
+.font_bold{
+  font-weight: bold;
+}

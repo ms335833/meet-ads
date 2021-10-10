@@ -1,0 +1,86 @@
+<div class="container mx-auto px-6">
+  <div class="heading_button pt-6 pb-3">
+    <h4
+      class="font-bold text-white text-center lg:text-left xl:text-left"
+    >
+      Verzendkosten per land
+    </h4>
+    <p class="text_darkGray py-2 lg:text-left xl:text-left text-sm">
+      Selecteer een land om toe te voegen
+    </p>
+  </div>
+  <div
+    class="
+      flex flex-col
+      lg:flex-row
+      xl:flex-row
+      py-2
+      justify-center
+      lg:justify-start
+    "
+  >
+    <div class="flex flex-col w-full lg:w-4/12 xl:w-4/12">
+      <select  
+        class="common_form_input w-full px-5 py-3"
+        placeholder="Meet Web IT"
+      >
+        <option>Belgie</option>
+      </select>
+    </div>
+    <div class="px-2 py-2 lg:py-0 flex justify-center lg:justify-start">
+      <button class="bg_yellow px-3 py-3 text-black rounded-lg">
+        Land Toevoegen
+      </button>
+    </div>
+  </div>
+  <div>
+    <p class="text_darkGray py-2 lg:text-left xl:text-left text-sm">
+      Onderstaande landen zullen zichtbaar zijn voor je klanten als
+      verzendopties in je webshop.
+    </p>
+  </div>
+  <div
+    class="
+      flex flex-col
+      items-center
+      lg:flex-row lg:items-start
+      xl:flex-row xl:items-start
+      links_container
+      pt-5
+    "
+  >
+    <div
+      class="pr-2 pl-2 lg:pl-0 xl:pl-0 lg:pr-2 xl:pr-2 py-1 lg:py-0 xl:py-0"
+      [ngClass]="
+        activeComponent === 'nederland' ? ' active_button' : ' inActive_button'
+      "
+      (click)="showActiveComponent('nederland')"
+    >
+      <button class="px-5 py-3 text-sm text-center">Nederland</button>
+    </div>
+    <div
+      class="px-2 py-1 lg:py-0 xl:py-0"
+      [ngClass]="
+        activeComponent === 'verzendkosten'
+          ? ' active_button'
+          : ' inActive_button'
+      "
+      (click)="showActiveComponent('verzendkosten')"
+    >
+      <button class="px-5 py-3 text-sm text-center">Belgie</button>
+    </div>
+    <div
+      class="px-2 py-1 lg:py-0 xl:py-0"
+      [ngClass]="
+        activeComponent === 'social' ? ' active_button' : ' inActive_button'
+      "
+      (click)="showActiveComponent('social')"
+    >
+      <button class="px-5 py-3 text-sm text-center">Duitsland</button>
+    </div>
+  </div>
+  <!-- categorieen -->
+  <div class="w-full" [ngClass]="activeComponent === 'nederland' ? ' block' : ' hidden'">
+    <app-nederland class="w-full"></app-nederland>
+  </div>
+</div>

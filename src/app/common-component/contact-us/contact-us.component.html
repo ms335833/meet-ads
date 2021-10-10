@@ -1,0 +1,278 @@
+<div class="section_contact_us common_contact-Container">
+  <!-- left side -->
+  <div class="section_contact_us_left_side">
+    <div>
+      <!-- title -->
+      <div class="section_contact_us_left_side_heading" data-aos=" fade-up">
+        <h4>Faq</h4>
+      </div>
+      <div data-aos="fade-up">
+        <!-- collapse 1-->
+        <div
+          class="common_collapse section_contact_us_common_collapse"
+          [ngClass]="
+            activeCollapse === '1'
+              ? 'section_contact_us_bg_yellow'
+              : 'section_contact_us_bg__bg_gray'
+          "
+          (click)="div1Function('1')"
+        >
+          <!-- header -->
+          <div class="section_contact_us_header">
+            <p>Lorem ipsum dolor sit amet?</p>
+            <div>
+              <img
+                *ngIf="!div1"
+                src="../../../assets/images/downArrow.png"
+                alt=""
+                class="h_10px"
+              />
+              <img
+                *ngIf="div1"
+                src="../../../assets/images/upArrow.png"
+                alt=""
+                class="h_10px"
+              />
+            </div>
+          </div>
+          <!-- body -->
+          <div class="contact_us_body_description" *ngIf="div1">
+            <p class="text_darkblue2">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam
+            </p>
+          </div>
+        </div>
+        <!-- collapse 2-->
+        <div
+          class="common_collapse section_contact_us_common_collapse"
+          [ngClass]="
+            activeCollapse === '2'
+              ? 'section_contact_us_bg_yellow'
+              : 'section_contact_us_bg__bg_gray'
+          "
+          (click)="div1Function('2')"
+        >
+          <!-- header -->
+          <div class="section_contact_us_header">
+            <p class="font-bold text-base">Lorem ipsum dolor sit amet?</p>
+            <div class="">
+              <img
+                *ngIf="!div2"
+                src="../../../assets/images/downArrow.png"
+                alt=""
+                class="h_10px"
+              />
+              <img
+                *ngIf="div2"
+                src="../../../assets/images/upArrow.png"
+                alt=""
+                class="h_10px"
+              />
+            </div>
+          </div>
+          <!-- body -->
+          <div class="contact_us_body_description" *ngIf="div2">
+            <p class="text_darkblue2">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam
+            </p>
+          </div>
+        </div>
+        <!-- collapse 3-->
+        <div
+          class="common_collapse section_contact_us_common_collapse"
+          [ngClass]="
+            activeCollapse === '3'
+              ? 'section_contact_us_bg_yellow'
+              : 'section_contact_us_bg__bg_gray'
+          "
+          (click)="div1Function('3')"
+        >
+          <!-- header -->
+          <div class="section_contact_us_header">
+            <p class="font-bold text-base">Lorem ipsum dolor sit amet?</p>
+            <div class="">
+              <img
+                *ngIf="!div3"
+                src="../../../assets/images/downArrow.png"
+                alt=""
+                class="h_10px"
+              />
+              <img
+                *ngIf="div3"
+                src="../../../assets/images/upArrow.png"
+                alt=""
+                class="h_10px"
+              />
+            </div>
+          </div>
+          <!-- body -->
+          <div class="contact_us_body_description" *ngIf="div3">
+            <p class="text_darkblue2">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam
+            </p>
+          </div>
+        </div>
+        <!-- collapse 4-->
+        <div
+          class="common_collapse section_contact_us_common_collapse"
+          [ngClass]="
+            activeCollapse === '4'
+              ? 'section_contact_us_bg_yellow'
+              : 'section_contact_us_bg__bg_gray'
+          "
+          (click)="div1Function('4')"
+        >
+          <!-- header -->
+          <div class="section_contact_us_header">
+            <p class="font-bold text-base">Lorem ipsum dolor sit amet?</p>
+            <div class="">
+              <img
+                *ngIf="!div4"
+                src="../../../assets/images/downArrow.png"
+                alt=""
+                class="h_10px"
+              />
+              <img
+                *ngIf="div4"
+                src="../../../assets/images/upArrow.png"
+                alt=""
+                class="h_10px"
+              />
+            </div>
+          </div>
+          <!-- body -->
+          <div class="contact_us_body_description" *ngIf="div4">
+            <p class="text_darkblue2">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- address content -->
+      <div
+        class="section_contact_us_left_side_adress_content"
+        data-aos="fade-up"
+      >
+        <h4>Location</h4>
+        <div class="section_contact_us_left_side_adress_content_google_map">
+          <!-- left side -->
+          <div class="section_contact_us_left_side_google_map_image">
+            <img src="../../../assets/images/NoPath-Copy(40)@3x.png" alt="" />
+          </div>
+          <!-- right side -->
+          <div class="contact_us_google_map_inner">
+            <div class="contact_us_google_map_inner_heading">
+              <img
+                src="../../../assets/images/pin(1).png"
+                alt=""
+                class="h_18px"
+              />
+              <p>Google Maps</p>
+            </div>
+            <div class="contact_us_google_map_inner__address">
+              <p>2068 Tea Berry Lane, Grandview Wisconsin</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- right side -->
+  <div class="section_contact_us_right_side">
+    <div>
+      <!-- title -->
+      <div class="section_contact_us_right_side_inner" data-aos="fade-left">
+        <h4>Lorem ipsum dolor sit amet, consectetur</h4>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco
+        </p>
+      </div>
+      <!-- content and button -->
+      <div
+        data-aos="fade-left"
+        class="section_contact_us_right_side_button_content"
+      >
+        <div class="w-7/12 lg:w-4/12 xl:w-4/12">
+          <button class="section_contact_us_right_side_contact_button">
+            <span
+              routerLink="/"
+              routerLinkActive="hidden"
+              [routerLinkActiveOptions]="{ exact: true }"
+              ><img
+                src="../../../assets/images/phone.png"
+                alt=""
+                class="h_14px"
+            /></span>
+            <span class="padding-left: 1rem;">12334345346</span>
+          </button>
+        </div>
+        <div class="section_contact_us_right_side_contact_mail_main">
+          <button class="text_darkblue2">
+            <img
+              src="../../../assets/images/Group39782@3x.png"
+              alt=""
+              class="h_14px"
+            />
+            <span>test@gmail.com</span>
+          </button>
+        </div>
+      </div>
+      <!-- form -->
+      <div
+        class="section_contact_us_right_side_form_container"
+        data-aos="fade-left"
+      >
+        <div class="section_contact_us_right_side_form_inner bg_darkblue2">
+          <form class="section_contact_us_right_side_form_main">
+            <!-- title -->
+            <div class="section_contact_us_right_side_form_title">
+              <h4 class="text-yellow-500 py-3 text-2xl">Contact Us</h4>
+            </div>
+            <!-- name -->
+            <div class="padding-y-2">
+              <input
+                class="section_contact_us_right_side_form_input"
+                placeholder="Name"
+              />
+            </div>
+            <!-- Email Id -->
+            <div class="padding-y-2">
+              <input
+                class="section_contact_us_right_side_form_input"
+                placeholder="Email ID"
+              />
+            </div>
+            <!-- Phone Number -->
+            <div class="padding-y-2">
+              <input
+                class="section_contact_us_right_side_form_input"
+                placeholder="Phone Number"
+              />
+            </div>
+            <!-- Message -->
+            <div class="padding-y-2">
+              <textarea
+                class="section_contact_us_right_side_form_input"
+                placeholder="Message"
+                rows="5"
+              ></textarea>
+            </div>
+            <div class="section_contact_us_right_side_form_button">
+              <button class="padding-y-2">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

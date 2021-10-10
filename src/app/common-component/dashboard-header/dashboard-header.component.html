@@ -1,0 +1,179 @@
+<div
+  class="
+    w-full
+    flex
+    justify-between
+    items-center
+    container
+    mx-auto
+    py-3
+    px-6
+    dashboard_header_container
+  "
+  (clickOutside)="onClickedOutside($event)"
+>
+  <!-- left side -->
+  <div class="w-6/12 flex">
+    <button (click)="showHide()" class="pr-3 hidden lg:block xl:block">
+      <span class="text-2xl text-white cursor-pointer">&#9776;</span>
+    </button>
+    <h4 class="text-white text-2xl font-bold flex">
+      <!-- Bestellingen -->
+      <span
+        [ngClass]="
+          activeRoute === '/advertenties2' || activeRoute === '/bestellingen2'
+            ? ' text_darkGray'
+            : ' text-white'
+        "
+      >
+        {{ item }}
+      </span>
+      <span
+        [ngClass]="
+          activeRoute === '/advertenties2' || activeRoute === '/bestellingen2'
+            ? ' text-white d_block px-2'
+            : ' d_none'
+        "
+      >
+        /</span
+      >
+    </h4>
+  </div>
+  <!-- right side -->
+  <div class="w-6/12 right_side_container">
+    <div class="hidden lg:block xl:block">
+      <ul
+        class="
+          flex
+          justify-end
+          w-full
+          list-none
+          text_darkblue
+          items-center
+          font-medium
+          cursor-pointer
+        "
+        (click)="logoutModal()"
+      >
+        <li class="px-1">
+          <img
+            src="../../../assets/images/ben-dellot@3x.png"
+            class="h_30px"
+            alt=""
+          />
+        </li>
+        <li class="px-1">
+          <p class="text-">John Doe</p>
+        </li>
+        <li class="px-1">
+          <img
+            src="../../../assets/images/Polygon26@3x.png"
+            class="h_8px"
+            alt=""
+          />
+        </li>
+      </ul>
+    </div>
+    <div class="block lg:hidden xl:hidden">
+      <div class="w-full flex justify-end px-2">
+        <span class="text-2xl text-white cursor-pointer" (click)="openNav()"
+          >&#9776;</span
+        >
+      </div>
+    </div>
+  </div>
+  <!-- reponsive navigation -->
+  <div class="reponsive_dashboardSidenav_container">
+    <div class="sidenav" *ngIf="mySidenav">
+      <a
+        href="javascript:void(0)"
+        class="closebtn text-white"
+        (click)="closeNav()"
+        >&times;</a
+      >
+      <a
+        routerLink="/dashboard"
+        [ngClass]="
+          activeRoute === '/dashboard' ? ' text_yellow' : ' text-white'
+        "
+        >Dashboard</a
+      >
+      <a
+        routerLink="/bestellingen"
+        [ngClass]="
+          activeRoute === '/bestellingen' || activeRoute === '/bestellingen2'
+            ? ' text_yellow'
+            : ' text-white'
+        "
+      >
+        Bestellingen</a
+      >
+      <a
+        routerLink="/advertenties"
+        [ngClass]="
+          activeRoute === '/advertenties' || activeRoute === '/advertenties2'
+            ? ' text_yellow'
+            : ' text-white'
+        "
+      >
+        Advertenties</a
+      >
+      <a
+        routerLink="/bedrijf"
+        [ngClass]="activeRoute === '/bedrijf' ? ' text_yellow' : ' text-white'"
+      >
+        Bedrijf</a
+      >
+      <a
+        routerLink="/webshop"
+        [ngClass]="activeRoute === '/webshop' ? ' text_yellow' : ' text-white'"
+      >
+        Webshop</a
+      >
+      <a
+        routerLink="/klanten"
+        [ngClass]="activeRoute === '/klanten' ? ' text_yellow' : ' text-white'"
+      >
+        Klanten</a
+      >
+      <a
+        routerLink="/facturen"
+        [ngClass]="activeRoute === '/facturen' ? ' text_yellow' : ' text-white'"
+        >Facturen</a
+      >
+      <a
+        routerLink="/transactie"
+        [ngClass]="
+          activeRoute === '/transactie' ? ' text_yellow' : ' text-white'
+        "
+      >
+        Transactie</a
+      >
+      <a
+        routerLink="/"
+        [ngClass]="activeRoute === '/' ? ' text_yellow' : ' text-white'"
+      >
+        Transactie</a
+      >
+    </div>
+  </div>
+</div>
+<div
+  class="
+    absolute
+    mx-6
+    logout_popup
+    right-0
+    rounded-lg
+    px-5
+    py-2
+    bg_component_color2
+    shadow-lg
+    cursor-pointer
+  "
+  [ngClass]="logoutPopup === 'true' ? 'block' : 'hidden'"
+>
+  <div routerLink="/" class="    cursor-pointer">
+    <h5 class="text-white">Logout</h5>
+  </div>
+</div>

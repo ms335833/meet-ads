@@ -1,0 +1,92 @@
+/* background colors */
+.bg_darkblue {
+  background-color: #182e3f;
+}
+.bg_darkblue2 {
+  background-color: #16242d;
+}
+.bg_darkblue3 {
+  background-color: rgba(41, 57, 68, 0.96);
+}
+.bg_gray1 {
+  background-color: #ececec;
+}
+.bg_dashboard_color {
+  background-color: #233039;
+}
+.bg_yellow {
+  background-color: #e4c218;
+}
+.bg_yellow:hover {
+  background-color: #d6b81f;
+}
+.bg_white {
+  background: white;
+}
+/* border */
+.br_yellow {
+  border: 1px solid #e4c218;
+}
+.bg_buttonGray{
+  background-color: #293844;
+}
+.bg_buttonGray:hover{
+  background-color: #e4c218;
+  color: #000!important;
+}
+/* components background color of dashboard */
+.bg_component_color {
+  background-color: rgba(41, 57, 68, 0.96);
+}
+.bg_component_color2 {
+  background-color: #44515b!important;
+}
+/* color */
+.text_darkblue {
+  color: #354249;
+}
+.text_darkblue2 {
+  color: #16242d;
+}
+.text_gray2 {
+  color: #ccc7c796;
+}
+.text_gray3 {
+  color: #9193a3;
+}
+.text_yellow {
+  color: #e4c218 !important;
+}
+.text_yellow2 {
+  color: #e4c218 !important;
+}
+.text_yellow2:hover {
+  color: #ccaf1e !important;
+}
+.text_darkGray {
+  color: #8b8b8b;
+}
+.text_lightGreen {
+  color: #74e58e;
+}
+.text_Red {
+  color: #f24010;
+}
+
+/* pagination arrow color */
+.pagination_arrow_color{
+  color: #8b8b8b;
+}
+.pagination_arrow_color:hover{
+  color: #e4c218;
+}
+.pagination_inactive_number{
+  background-color: #233039;  
+}
+.pagination_inactive_number:hover{
+  color: #000;
+  background-color: #e4c218;  
+}
+.login_bg_color{
+  background: #212e37;
+}

@@ -1,0 +1,470 @@
+<div class="flex w-full">
+  <!-- left side navigation-->
+  <div
+    class="hidden lg:block xl:block"
+    [ngClass]="className === 'true' ? 'w-2/12' : 'w-1/12'"
+  >
+    <app-dashboard-navigation
+      [className]="className"
+    ></app-dashboard-navigation>
+  </div>
+  <!-- right side page content -->
+  <div
+    class="bg_dashboard_color min_100vh"
+    [ngClass]="
+      className === 'true'
+        ? 'w-full lg:w-10/12 xl:w-10/12'
+        : 'w-full lg:w-11/12 xl:w-11/12'
+    "
+  >
+    <!-- header -->
+    <div>
+      <app-dashboard-header
+        (newItemEvent)="addItem($event)"
+        [item]="currentItem"
+      ></app-dashboard-header>
+    </div>
+    <!-- filters -->
+    <div
+      class="
+        flex flex-col
+        lg:flex-row
+        xl:flex-row
+        justify-between
+        container
+        px-6
+        pt-6
+        mx-auto
+        dashboard_filters_container
+      "
+    >
+      <!-- left side -->
+      <div class="input_container w-full flex">
+        <div class="lg:w-7/12 xl:w-7/12 flex">
+          <input
+            placeholder="Zoek op bedrijfsnaam, contactpersoon etc"
+            class="input px-4 w-full py-2"
+          />
+          <div class="search_icon_container">
+            <img
+              src="../../../assets/images/magnifying-glass@3x.png"
+              class="h_15px absolute"
+            />
+          </div>
+        </div>
+        <div class="px-3">
+          <button
+            type="button"
+            class="
+              text_yellow text-center
+              border
+              rounded-lg
+              br_yellow
+              pl-3
+              pr-4
+              py-2
+              bg_buttonGray
+            "
+          >
+            Clear
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- table -->
+    <div class="table_container container mx-auto py-4 px-6">
+      <div
+        class="br_radius6 table_responsive_width bg_component_color px-3 py-3"
+      >
+        <!-- header -->
+        <div class="w-full table_header br_radius10 py-3 px-1">
+          <ul class="list-none flex justify-between py-2">
+            <li class="w-2/12 px-6">Email</li>
+            <li class="w-2/12">Telnr</li>
+            <li class="w-2/12">Zakalijk</li>
+            <li class="w-2/12">Aangemaakt op</li>
+            <li class="w-2/12">Laatste transactie</li>
+            <li class="w-2/12 px-1"></li>
+          </ul>
+        </div>
+        <!-- body -->
+        <div class="w-full table_body br_radius10 py-3">
+          <ul
+            class="list-none flex justify-between data py-3"
+            *ngFor="let hero of HEROES; let i = index"
+          >
+            <li class="w-2/12 px-6">{{ hero.email }}</li>
+            <li class="w-2/12 flex px-1">
+              {{ hero.telnr }}
+            </li>
+            <li class="w-2/12 px-2">
+              {{ hero.Zakalijk }}
+            </li>
+            <li class="w-2/12 px-1">{{ hero.Aangemaakt_op }}</li>
+            <li class="w-2/12 px-1">{{ hero.Laatste_transactie }}</li>
+            <ul
+              class="w-2/12 px-3 flex justify-center py-2 cursor-pointer"
+              (click)="onItemClick(hero.id)"
+            >
+              <li class="open_moreDetail_popup">
+                <img
+                  src="../../../assets/images/dots.png"
+                  alt=""
+                  class="h_7px"
+                />
+              </li>
+              <ul
+                class="more_option_popup margin_top2 cursor-pointer"
+                [ngClass]="
+                  hero.id === itemId && showPopup ? '' : ' common_popup_id'
+                "
+              >
+                <ul class="list-none content_container">
+                  <li class="px-5 py-3" (click)="openNav()">Edit</li>
+                  <!-- horizontal line -->
+                  <li class="hr_line"></li>
+                  <li class="px-5 py-3">Facturen</li>
+                </ul>
+              </ul>
+            </ul>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- pagination -->
+    <div
+      class="
+        flex
+        justify-between
+        container
+        mx-auto
+        px-6
+        pt-2
+        pb-10
+        flex-col-reverse
+        items-center
+        lg:flex-row
+        xl:flex-row
+        lg:items-start
+        xl:items-start
+      "
+    >
+      <!-- left side -->
+      <div class="py-5 lg:py-0 xl:py-0">
+        <p class="text_darkGray text-sm">Showing 14 out of 189 entries</p>
+      </div>
+      <!-- right side -->
+      <div>
+        <ul class="list-none flex items-center">
+          <li class="px-2 cursor-pointer pagination_arrow_color"><</li>
+          <li
+            class="
+              mx-1
+              pagination_page_number_padding
+              text-sm
+              bg_yellow
+              rounded-full
+              cursor-pointer
+              text-center
+            "
+          >
+            1
+          </li>
+          <li
+            class="
+              mx-1
+              pagination_page_number_padding
+              text-sm
+              cursor-pointer
+              rounded-full
+              cursor-pointer
+              pagination_inactive_number
+              text-center text_darkGray
+            "
+          >
+            2
+          </li>
+          <li
+            class="
+              pagination_page_number_padding
+              text-sm
+              cursor-pointer
+              rounded-full
+              cursor-pointer
+              pagination_inactive_number
+              text-center text_darkGray
+            "
+          >
+            3
+          </li>
+          <li class="px-2 cursor-pointer pagination_arrow_color">></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- modal -->
+  <div
+    class="fixed z-10 inset-0 overflow-y-auto modal_container"
+    aria-labelledby="modal-title"
+    role="dialog"
+    aria-modal="true"
+    *ngIf="formPopup"
+  >
+    <div
+      class="
+        flex
+        items-end
+        justify-center
+        min-h-screen
+        pt-4
+        pb-20
+        px-3
+        text-center
+        sm:block sm:p-0
+      "
+    >
+      <div
+        class="
+          fixed
+          inset-0
+          bg-gray-500 bg-opacity-75
+          transition-opacity
+          cursor-pointer
+        "
+        aria-hidden="true"
+        (click)="closeNav()"
+      ></div>
+      <span
+        class="
+          hidden
+          sm:inline-block sm:align-middle sm:h-screen
+          cursor-pointer
+        "
+        aria-hidden="true"
+        (click)="closeNav()"
+        >&#8203;</span
+      >
+      <div
+        class="
+          modal_content_container_width
+          inline-block
+          align-bottom
+          bg_darkblue3
+          rounded-lg
+          text-left
+          overflow-hidden
+          shadow-xl
+          transform
+          transition-all
+          sm:my-8 sm:align-middle sm:max-w-lg sm:w-full
+        "
+      >
+        <div class="bg_darkblue3 pt-4 pb-3">
+          <div class="sm:flex sm:items-start">
+            <div class="mt-2 text-center w-full sm:mt-0 sm:text-left">
+              <div class="flex justify-between px-4">
+                <h3
+                  class="text-lg leading-6 font-medium text_gray3"
+                  id="modal-title"
+                >
+                  Bestelling aanmelden bij postbedrijf
+                </h3>
+                <div class="cursor-pointer" (click)="closeNav()">
+                  <img
+                    src="../../../assets/images/cancel(1)@3x.png"
+                    alt=""
+                    class="h_14px"
+                  />
+                </div>
+              </div>
+              <div class="modal_hr_line mt-2"></div>
+              <!-- checkboxes -->
+              <div class="flex pt-4 pb-3">
+                <div class="checkboxes_container px-4 py-2">
+                  <label class="checkbox_container flex">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    <span class="checkbox_title">Zakelijk</span>
+                  </label>
+                </div>
+                <div class="checkboxes_container px-2 py-2">
+                  <label class="checkbox_container flex">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    <span class="checkbox_title">Particulier</span>
+                  </label>
+                </div>
+              </div>
+              <div>
+                <div class="px-6">
+                  <p
+                    class="
+                      text-white
+                      pt-2
+                      lg:text-left
+                      xl:text-left
+                      text-lg
+                      font-base
+                    "
+                  >
+                    Persoonlijk
+                  </p>
+                </div>
+                <!-- 2nd row -->
+                <div class="flex flex-col lg:flex-row xl:flex-row px-4 py-2">
+                  <!-- 1st input-->
+                  <div class="flex flex-col px-2 w-full lg:w-4/12 xl:w-4/12">
+                    <label class="opacity_8 text-white text-base py-2"
+                      >Voornaam</label
+                    >
+                    <input
+                      class="common_form_input w-full px-5 py-2"
+                      placeholder="ksuvsjdv sefjn"
+                    />
+                  </div>
+                  <!-- 2nd input-->
+                  <div class="flex flex-col px-2 w-full lg:w-4/12 xl:w-4/12">
+                    <label class="opacity_8 text-white text-base py-2"
+                      >Achternaam</label
+                    >
+                    <input
+                      class="common_form_input w-full px-5 py-2"
+                      placeholder="Brouwers"
+                    />
+                  </div>
+                  <!-- 3rd -->
+                  <div class="flex flex-col px-2 w-full lg:w-4/12 xl:w-4/12">
+                    <label class="opacity_8 text-white text-base py-2"
+                      >Telefoonnummer</label
+                    >
+                    <input
+                      class="common_form_input w-full px-5 py-2"
+                      placeholder="0209840294"
+                    />
+                  </div>
+                </div>
+                <!-- 3rd row -->
+                <div class="flex flex-col lg:flex-row xl:flex-row px-4 py-2">
+                  <!-- 1st input-->
+                  <div class="flex flex-col px-2 w-full lg:w-4/12 xl:w-4/12">
+                    <label class="opacity_8 text-white text-base py-2"
+                      >Email</label
+                    >
+                    <input
+                      class="common_form_input w-full px-5 py-2"
+                      placeholder="test@gmail.com"
+                    />
+                  </div>
+                  <!-- 2nd input-->
+                  <div class="flex flex-col px-2 w-full lg:w-4/12 xl:w-4/12">
+                    <label class="opacity_8 text-white text-base py-2"
+                      >Funtie</label
+                    >
+                    <input
+                      class="common_form_input w-full px-5 py-2"
+                      placeholder="-"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="py-3">
+                <div class="px-6">
+                  <p
+                    class="
+                      text-white
+                      pt-2
+                      lg:text-left
+                      xl:text-left
+                      text-lg
+                      font-base
+                    "
+                  >
+                    Verzendadres
+                  </p>
+                </div>
+                <!-- 2nd row -->
+                <div class="flex flex-col lg:flex-row xl:flex-row px-4 py-2">
+                  <!-- 1st input-->
+                  <div class="flex flex-col px-2 w-full lg:w-4/12 xl:w-4/12">
+                    <label class="opacity_8 text-white text-base py-2"
+                      >adress</label
+                    >
+                    <input
+                      class="common_form_input w-full px-5 py-2"
+                      placeholder="srhrgdhdhthe544f"
+                    />
+                  </div>
+                  <!-- 2nd input-->
+                  <div class="flex flex-col px-2 w-full lg:w-4/12 xl:w-4/12">
+                    <label class="opacity_8 text-white text-base py-2"
+                      >Postal Code</label
+                    >
+                    <input
+                      class="common_form_input w-full px-5 py-2"
+                      placeholder="6575fc"
+                    />
+                  </div>
+                  <!-- 3rd -->
+                  <div class="flex flex-col px-2 w-full lg:w-4/12 xl:w-4/12">
+                    <label class="opacity_8 text-white text-base py-2"
+                      >Stad</label
+                    >
+                    <input
+                      class="common_form_input w-full px-5 py-2"
+                      placeholder="dhtfhfhdfh"
+                    />
+                  </div>
+                </div>
+                <!-- 3rd row -->
+                <div class="flex flex-col lg:flex-row xl:flex-row px-4 py-2">
+                  <!-- 1st input-->
+                  <div class="flex flex-col px-2 w-full lg:w-4/12 xl:w-4/12">
+                    <label class="opacity_8 text-white text-base py-2"
+                      >Land</label
+                    >
+                    <input
+                      class="common_form_input w-full px-5 py-2"
+                      placeholder="dbhdgbdxfdb"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="
+              bg_darkblue3
+              px-2
+              py-2
+              sm:px-6
+              flex flex-col
+              lg:flex-row
+              justify-center
+              xl:flex-row
+              lg:justify-end
+              xl:justify-end
+            "
+          >
+            <div class="w-full lg:w-4/12">
+              <button
+                type="button"
+                class="
+                  bg_yellow
+                  text-center
+                  w-full
+                  border
+                  rounded-lg
+                  br_yellow
+                  px-3
+                  py-2
+                "
+              >
+                Toewoegen
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

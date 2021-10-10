@@ -1,0 +1,15 @@
+.bg_component_color2 .common_form_input {
+  background: #233039 !important;
+}
+@media (max-width: 991px) and (min-width: 320px) {
+  .nederland_component {
+    overflow-x: auto;
+  }
+  .nederland_component .table_responsive_width {
+    width: fit-content;
+  }
+  .nederland_component .table_body {
+    overflow-x: auto;
+    min-width: 1320px;
+  }
+}

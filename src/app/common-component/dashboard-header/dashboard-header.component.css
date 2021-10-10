@@ -1,0 +1,49 @@
+.dashboard_header_container .right_side_container ul li p {
+  color: #71748e;
+  font-size: 15px;
+}
+
+.reponsive_dashboardSidenav_container .sidenav {
+  height: 100%;
+  width: 280px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #233039;
+  box-shadow: 0 2px 26px 0 rgba(0, 0, 0, 0.05);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.reponsive_dashboardSidenav_container .sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  /* color: #818181; */
+  display: block;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.reponsive_dashboardSidenav_container .sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.reponsive_dashboardSidenav_container .sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .reponsive_dashboardSidenav_container .sidenav {
+    padding-top: 15px;
+  }
+  .reponsive_dashboardSidenav_container .sidenav a {
+    font-size: 18px;
+  }
+}

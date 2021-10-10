@@ -1,0 +1,66 @@
+<div class="login_common_header login_bg_color">
+    <div
+      class="w-full flex justify-between items-center container mx-auto py-3 px-2"
+    >
+      <!-- left side -->
+      <div class="w-3/12">
+        <img src="../../../assets/images/logo.png" alt="logo" class="h_80px" />
+      </div>
+      <!-- right side -->
+      <div class="w-4/12 right_side_container">
+        <div class="hidden lg:block xl:block">
+          <ul
+            class="
+              flex
+              justify-between
+              w-full
+              list-none
+              items-center
+              font-medium
+              link_container
+            "
+          >
+            <li class="cursor-pointer hover:text-yellow-400 px-1">
+              <a
+                [routerLink]="['/']"
+                routerLinkActive="text-yellow-400"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >Home</a
+              >
+            </li>
+            <li class="cursor-pointer hover:text-yellow-400 px-1">
+              <a routerLink="/services" routerLinkActive="text-yellow-400"
+                >Services</a
+              >
+            </li>
+            <li class="cursor-pointer hover:text-yellow-400 px-1">
+              <a routerLink="/pricing" routerLinkActive="text-yellow-400"
+                >Pricing</a
+              >
+            </li>
+            <li class="cursor-pointer hover:text-yellow-400 px-1">About us</li>
+          </ul>
+        </div>
+        <div class="block lg:hidden xl:hidden">
+          <div class="w-full flex justify-end px-2">
+            <span style="font-size: 30px; cursor: pointer" (click)="openNav()"
+              >&#9776;</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- reponsive navigation -->
+    <div class="reponsive_container">
+      <div class="sidenav" *ngIf="mySidenav">
+        <a href="javascript:void(0)" class="closebtn" (click)="closeNav()"
+          >&times;</a
+        >
+        <a routerLink="/">Home</a>
+        <a routerLink="/services">Services</a>
+        <a routerLink="/pricing">Pricing</a>
+        <a>About Us</a>
+      </div>
+    </div>
+  </div>
+  

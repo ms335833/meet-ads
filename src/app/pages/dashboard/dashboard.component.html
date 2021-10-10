@@ -1,0 +1,478 @@
+<div class="flex w-full">
+  <!-- left side navigation-->
+  <div
+    class="hidden lg:block xl:block"
+    [ngClass]="className === 'true' ? 'w-2/12' : 'w-1/12'"
+  >
+    <app-dashboard-navigation
+      [className]="className === 'true' ? 'true' : 'false'" 
+    ></app-dashboard-navigation>
+  </div>
+  <!-- right side page content -->
+  <div
+    class="bg_dashboard_color min_100vh"
+    [ngClass]="
+      className === 'true'
+        ? 'w-full lg:w-10/12 xl:w-10/12'
+        : 'w-full lg:w-11/12 xl:w-11/12'
+    "
+  >
+    <!-- header -->
+    <div>
+      <app-dashboard-header
+        (newItemEvent)="addItem($event)"
+        [item]="currentItem"
+      ></app-dashboard-header>
+    </div>
+    <div class="flex flex-wrap justify-between container mx-auto py-4 px-3">
+      <!-- 1st -->
+      <div class="px-3 w-full lg:w-3/12 xl:w-3/12">
+        <div
+          class="bg_component_color px-3 py-4 my-2 lg:my-0 xl:my-0 rounded-lg"
+        >
+          <div>
+            <h4 class="text_darkGray opacity_8 m-0 fs_15px font-bold">
+              MARKTPLAATS
+            </h4>
+            <h4 class="fs_22 text-white py-2 darkGray">0</h4>
+            <h4 class="text_darkGray opacity_8 m-0 fs_15px font-bold">
+              ADVERTENTIES
+            </h4>
+          </div>
+        </div>
+      </div>
+      <!-- 2nd -->
+      <div class="px-3 w-full lg:w-3/12 xl:w-3/12">
+        <div
+          class="bg_component_color px-3 py-4 my-2 lg:my-0 xl:my-0 rounded-lg"
+        >
+          <div>
+            <h4 class="text_darkGray opacity_8 m-0 fs_15px font-bold">
+              WEBSHOP
+            </h4>
+            <h4 class="fs_22 text-white py-2 darkGray">0</h4>
+            <h4 class="text_darkGray opacity_8 m-0 fs_15px font-bold">
+              ADVERTENTIES
+            </h4>
+          </div>
+        </div>
+      </div>
+      <!-- 3rd -->
+      <div class="px-3 w-full lg:w-3/12 xl:w-3/12">
+        <div
+          class="bg_component_color px-3 py-4 my-2 lg:my-0 xl:my-0 rounded-lg"
+        >
+          <div>
+            <h4 class="text_darkGray opacity_8 m-0 fs_15px font-bold">
+              INACTIEF
+            </h4>
+            <h4 class="fs_22 text-white py-2 darkGray">NAN</h4>
+            <h4 class="text_darkGray opacity_8 m-0 fs_15px font-bold">
+              ADVERTENTIES
+            </h4>
+          </div>
+        </div>
+      </div>
+      <!-- 4th -->
+      <div class="px-3 w-full lg:w-3/12 xl:w-3/12">
+        <div
+          class="bg_component_color px-3 py-4 my-2 lg:my-0 xl:my-0 rounded-lg"
+        >
+          <div>
+            <h4 class="text_darkGray opacity_8 m-0 fs_15px font-bold">
+              GEARCHIVEERD
+            </h4>
+            <h4 class="fs_22 text-white py-2 darkGray">0</h4>
+            <h4 class="text_darkGray opacity_8 m-0 fs_15px font-bold">
+              ADVERTENTIES
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- table -->
+    <div class="table_container container mx-auto px-6 py-3">
+      <div
+        class="br_radius6 table_responsive_width bg_component_color px-3 py-3"
+      >
+        <div>
+          <h4 class="text-white opacity_8 text-sm font-bold">
+            OPENSTAANDE BESTELLINGEN
+          </h4>
+        </div>
+        <div class="pt-2 pb-3">
+          <div class="modal_hr_line2"></div>
+        </div>
+        <!-- header -->
+        <div class="w-full table_header br_radius10 py-3 px-1">
+          <ul class="list-none flex justify-between">
+            <li class="w-1/12 text-center">S.No</li>
+            <li class="w-2/12">Betaalstatus</li>
+            <li class="w-2/12">Status</li>
+            <li class="w-2/12">Verzenden</li>
+            <li class="w-1/12">Betaling</li>
+            <li class="w-1/12">Betaling</li>
+            <li class="w-1/12">Totaal</li>
+            <li class="w-2/12"></li>
+          </ul>
+        </div>
+        <!-- body -->
+        <div class="w-full table_body br_radius10 py-3">
+          <ul
+            class="list-none flex justify-between py-3 data"
+            *ngFor="let hero of HEROES; let i = index"
+          >
+            <li class="w-1/12 text-center px-5">
+              {{ hero.id }}
+            </li>
+            <li class="w-2/12 flex px-1">
+              {{ hero.besteldatum }}
+            </li>
+            <li class="w-2/12 px-1">{{ hero.status }}</li>
+            <li class="w-2/12 px-1">{{ hero.verzenden }}</li>
+            <li class="w-1/12 px-2">{{ hero.producten }}</li>
+            <li class="w-1/12">{{ hero.betaling }}</li>
+            <li class="w-1/12">{{ hero.total }}</li>
+            <li class="w-2/12 text_yellow">
+              <u>{{ hero.naar }}</u>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- graphs -->
+    <div class="flex flex-wrap justify-between container mx-auto py-4 px-3">
+      <!-- 1st -->
+      <div class="px-3 w-full lg:w-3/12 xl:w-3/12">
+        <div
+          class="bg_component_color px-3 py-4 my-2 lg:my-0 xl:my-0 rounded-lg"
+        >
+          <div>
+            <h4 class="text_darkGray opacity_8 m-0 fs_13px font-bold">
+              OMZET VANDAAG
+            </h4>
+            <div class="flex justify-between">
+              <div>
+                <h4 class="fs_22 text_lightGreen darkGray py-1 lato_font">
+                  € 0,00
+                </h4>
+                <h4
+                  class="
+                    text_darkGray
+                    opacity_8
+                    m-0
+                    fs_15px
+                    font-bold
+                    lato_font
+                  "
+                >
+                  -
+                </h4>
+              </div>
+              <div class="flex items-end py-1">
+                <img
+                  src="../../../assets/images/Group39953@3x.png"
+                  alt=""
+                  class="h_50px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 2nd -->
+      <div class="px-3 w-full lg:w-3/12 xl:w-3/12">
+        <div
+          class="bg_component_color px-3 py-4 my-2 lg:my-0 xl:my-0 rounded-lg"
+        >
+          <div>
+            <h4 class="text_darkGray opacity_8 m-0 fs_13px font-bold">
+              JAAROMZET
+            </h4>
+            <div class="flex justify-between">
+              <div>
+                <h4 class="fs_22 text-white darkGray py-1 lato_font">365</h4>
+                <h4
+                  class="
+                    text_darkGray
+                    opacity_8
+                    m-0
+                    fs_15px
+                    font-bold
+                    lato_font
+                  "
+                >
+                  € 0,00
+                </h4>
+              </div>
+              <div class="flex items-end py-1">
+                <img
+                  src="../../../assets/images/Group39953@3x (1).png"
+                  alt=""
+                  class="h_50px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 3rd -->
+      <div class="px-3 w-full lg:w-3/12 xl:w-3/12">
+        <div
+          class="bg_component_color px-3 py-4 my-2 lg:my-0 xl:my-0 rounded-lg"
+        >
+          <div>
+            <h4 class="text_darkGray opacity_8 m-0 fs_13px font-bold">
+              MAANDOMZET
+            </h4>
+            <div class="flex justify-between">
+              <div>
+                <h4 class="fs_22 text-white darkGray py-1 lato_font">30</h4>
+                <h4
+                  class="
+                    text_darkGray
+                    opacity_8
+                    m-0
+                    fs_15px
+                    font-bold
+                    lato_font
+                  "
+                >
+                  € 0,00
+                </h4>
+              </div>
+              <div class="flex items-end py-1">
+                <img
+                  src="../../../assets/images/Group39953@3x(2).png"
+                  alt=""
+                  class="h_50px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 4th -->
+      <div class="px-3 w-full lg:w-3/12 xl:w-3/12">
+        <div
+          class="bg_component_color px-3 py-4 my-2 lg:my-0 xl:my-0 rounded-lg"
+        >
+          <div>
+            <h4 class="text_darkGray opacity_8 m-0 fs_13px font-bold">
+              WEEKOMZET
+            </h4>
+            <div class="flex justify-between">
+              <div>
+                <h4 class="fs_22 text-white darkGray py-1 lato_font">07</h4>
+                <h4
+                  class="
+                    text_darkGray
+                    opacity_8
+                    m-0
+                    fs_15px
+                    font-bold
+                    lato_font
+                  "
+                >
+                  € 0,00
+                </h4>
+              </div>
+              <div class="flex items-end py-1">
+                <img
+                  src="../../../assets/images/Group39953@3x(2).png"
+                  alt=""
+                  class="h_50px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- graphs -->
+    <div class="flex flex-wrap justify-between container mx-auto py-4 px-3">
+      <!-- 1st -->
+      <div class="px-3 w-full lg:w-3/12 xl:w-3/12">
+        <div
+          class="bg_component_color px-3 py-4 my-2 lg:my-0 xl:my-0 rounded-lg"
+        >
+          <div>
+            <h4 class="text_darkGray opacity_8 m-0 fs_13px font-bold">
+              OMZET VANDAAG
+            </h4>
+            <div class="flex justify-between">
+              <div>
+                <h4 class="fs_22 text_Red darkGray py-1 lato_font">€ 0,00</h4>
+                <h4
+                  class="
+                    text_darkGray
+                    opacity_8
+                    m-0
+                    fs_15px
+                    font-bold
+                    lato_font
+                  "
+                >
+                  -
+                </h4>
+              </div>
+              <div class="flex items-end py-1">
+                <img
+                  src="../../../assets/images/Group39953@3x.png"
+                  alt=""
+                  class="h_50px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 2nd -->
+      <div class="px-3 w-full lg:w-3/12 xl:w-3/12">
+        <div
+          class="bg_component_color px-3 py-4 my-2 lg:my-0 xl:my-0 rounded-lg"
+        >
+          <div>
+            <h4 class="text_darkGray opacity_8 m-0 fs_13px font-bold">
+              JAAROMZET
+            </h4>
+            <div class="flex justify-between">
+              <div>
+                <h4 class="fs_22 text-white darkGray py-1 lato_font">365</h4>
+                <h4
+                  class="
+                    text_darkGray
+                    opacity_8
+                    m-0
+                    fs_15px
+                    font-bold
+                    lato_font
+                  "
+                >
+                  € 0,00
+                </h4>
+              </div>
+              <div class="flex items-end py-1">
+                <img
+                  src="../../../assets/images/Group39953@3x(5).png"
+                  alt=""
+                  class="h_50px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 3rd -->
+      <div class="px-3 w-full lg:w-3/12 xl:w-3/12">
+        <div
+          class="bg_component_color px-3 py-4 my-2 lg:my-0 xl:my-0 rounded-lg"
+        >
+          <div>
+            <h4 class="text_darkGray opacity_8 m-0 fs_13px font-bold">
+              MAANDOMZET
+            </h4>
+            <div class="flex justify-between">
+              <div>
+                <h4 class="fs_22 text-white darkGray py-1 lato_font">30</h4>
+                <h4
+                  class="
+                    text_darkGray
+                    opacity_8
+                    m-0
+                    fs_15px
+                    font-bold
+                    lato_font
+                  "
+                >
+                  € 0,00
+                </h4>
+              </div>
+              <div class="flex items-end py-1">
+                <img
+                  src="../../../assets/images/Group39953@3x(4).png"
+                  alt=""
+                  class="h_50px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 4th -->
+      <div class="px-3 w-full lg:w-3/12 xl:w-3/12">
+        <div
+          class="bg_component_color px-3 py-4 my-2 lg:my-0 xl:my-0 rounded-lg"
+        >
+          <div>
+            <h4 class="text_darkGray opacity_8 m-0 fs_13px font-bold">
+              WEEKOMZET
+            </h4>
+            <div class="flex justify-between">
+              <div>
+                <h4 class="fs_22 text-white darkGray py-1 lato_font">07</h4>
+                <h4
+                  class="
+                    text_darkGray
+                    opacity_8
+                    m-0
+                    fs_15px
+                    font-bold
+                    lato_font
+                  "
+                >
+                  € 0,00
+                </h4>
+              </div>
+              <div class="flex items-end py-1">
+                <img
+                  src="../../../assets/images/Group39953@3x(3).png"
+                  alt=""
+                  class="h_50px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-wrap justify-between container mx-auto py-4 px-3">
+      <!-- 1st -->
+      <div class="px-3 w-full lg:w-6/12 xl:w-6/12">
+        <div
+          class="bg_component_color px-3 py-4 my-2 lg:my-0 xl:my-0 rounded-lg"
+        >
+          <div class="flex justify-between items-center">
+            <h4 class="text_darkGray opacity_8 m-0 fs_13px font-bold">
+              OMZETONTWIKKELING(€)
+            </h4>
+            <div>
+              <img src="../../../assets/images/dots.png" alt="" class="h_8px" />
+            </div>
+          </div>
+          <div class="w-full py-2">
+            <img src="../../../assets/images/Group40127.png" />
+          </div>
+        </div>
+      </div>
+      <!-- 2nd -->
+      <div class="px-3 w-full lg:w-6/12 xl:w-6/12">
+        <div
+          class="bg_component_color px-3 py-4 my-2 lg:my-0 xl:my-0 rounded-lg"
+        >
+          <div class="flex justify-between items-center">
+            <h4 class="text_darkGray opacity_8 m-0 fs_13px font-bold">
+              OMZETONTWIKKELING(€)
+            </h4>
+            <div>
+              <img src="../../../assets/images/dots.png" alt="" class="h_8px" />
+            </div>
+          </div>
+          <div class="w-full py-2">
+            <img src="../../../assets/images/Group40128.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

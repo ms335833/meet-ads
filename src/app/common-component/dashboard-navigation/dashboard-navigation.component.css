@@ -1,0 +1,51 @@
+.dashboard_sidenav_container {
+  background-color: #1a2831;
+}
+.dashboard_sidenav_container .navigation_container .active_link {
+  background-color: #ffd500;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  /* width: fit-content; */
+}
+.dashboard_sidenav_container .navigation_container .active_link:hover {
+  background-color: #f3cc09;
+}
+.dashboard_sidenav_container .navigation_container .active_link:hover h6{
+  color: #000;
+}
+.dashboard_sidenav_container .navigation_container h6{
+  font-size: 14px;
+}
+.dashboard_sidenav_container .navigation_container .inActive_link {
+  border-radius: 10px;
+  cursor: pointer;
+  /* width: fit-content; */
+}
+.dashboard_sidenav_container .navigation_container .inActive_link h6 {
+  color: #71748e;
+  opacity: 0.63;
+  font-weight: 500;
+}
+.dashboard_sidenav_container .navigation_container .inActive_link:hover {
+  border-radius: 10px;
+  background-color: #f3cc09;
+  opacity: 1;
+  color: #000;
+}
+.dashboard_sidenav_container .navigation_container .inActive_link:hover h6{
+  color: #000;
+  opacity: 1;
+}
+.dashboard_sidenav_container .navigation_container .inActive_link .active_img{
+  display: none;
+}
+.dashboard_sidenav_container .navigation_container .active_link .inActive_img{
+  display: none;
+}
+.dashboard_sidenav_container .navigation_container .inActive_link:hover .active_img{
+  display: block;
+}
+.dashboard_sidenav_container .navigation_container .inActive_link:hover .inActive_img{
+  display: none;
+}

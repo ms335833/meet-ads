@@ -1,0 +1,196 @@
+.prices_container .section1_container {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.prices_container .section1_container .title_content_container {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.prices_container .section1_container .title_content_container .title {
+  font-weight: 700;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  text-align: center;
+  padding-top: 0.75rem;
+}
+.prices_container
+  .section1_container
+  .title_content_container
+  .content_container {
+  width: 66.666667%;
+}
+.prices_container
+  .section1_container
+  .title_content_container
+  .content_container
+  p {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+@media (max-width: 1024px) and (min-width: 320px) {
+  .prices_container
+    .section1_container
+    .title_content_container
+    .content_container {
+    width: 100%;
+  }
+  .prices_container
+    .section2_container
+    .box_container
+    .common_single_box_container {
+    width: 100%;
+  }
+}
+.prices_container .section2_container {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.prices_container .section2_container .box_container {
+  padding-bottom: 2rem;
+  padding-top: 3rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  display: flex;
+}
+.prices_container
+  .section2_container
+  .box_container
+  .common_single_box_container {
+  /* width: 25%; */
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.prices_container .section2_container .common_box button {
+  border-radius: 5px;
+  border: solid 2px #fbbf24;
+  background-color: #fff;
+}
+.prices_container .section2_container .common_box .title_content h4 {
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  text-align: left;
+  padding-top: 1.25rem;
+}
+.prices_container .section2_container .common_box .padding_tb {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.prices_container .section2_container .common_box .button_container {
+  width: 100%;
+}
+.prices_container .section2_container .common_box .button_container button {
+  border-radius: 5px;
+  border: solid 2px #fbbf24;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  width: 100%;
+}
+.prices_container .section2_container .common_box .image_title_container {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+.prices_container
+  .section2_container
+  .common_box
+  .image_title_container
+  .image_title {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  align-items: center;
+  display: flex;
+}
+.prices_container
+  .section2_container
+  .common_box
+  .image_title_container
+  .image_title
+  p {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-align: left;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.prices_container .section2_container .common_box .plusImg_title_container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.prices_container
+  .section2_container
+  .common_box
+  .plusImg_title_container
+  .plusImg_title {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+}
+
+.prices_container
+  .section2_container
+  .common_box
+  .plusImg_title_container
+  .plusImg_title
+  p {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-align: left;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.prices_container .section2_container .common_box .title_content p {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-align: left;
+  color: #16242d;
+  margin: 0;
+}
+.prices_container .section2_container .common_box {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  box-shadow: 0 10px 53px 0 rgba(0, 0, 0, 0.11);
+  background-color: #fff;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  width: 100%;
+}
+.prices_container .section2_container .common_box .hr_line {
+  border-radius: 5px;
+  height: 1px;
+  background-color: #707070;
+}
+.prices_container .section2_container .common_box:hover .hr_line {
+  background-color: #fff;
+}
+.prices_container .section2_container .common_box:hover {
+  background: #ffcd4a;
+}
+.prices_container .section2_container .common_box:hover button {
+  border: solid 2px #ffffff !important;
+  background-color: #ffcd4a !important;
+}
+.prices_container .section2_container .common_box .goldenPlus,
+.prices_container .section2_container .common_box .whitePlus {
+  margin: -4px 0px 0px 3px;
+}
+.prices_container .section2_container .common_box:hover .goldenPlus {
+  display: none;
+}
+.prices_container .section2_container .common_box:hover .whitePlus {
+  display: block;
+}
+.prices_container .section2_container .common_box .whitePlus {
+  display: none;
+}

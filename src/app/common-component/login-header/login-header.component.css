@@ -1,0 +1,52 @@
+.reponsive_container .sidenav {
+  height: 100%;
+  width: 280px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.reponsive_container .sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.reponsive_container .sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.reponsive_container .sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .reponsive_container .sidenav {
+    padding-top: 15px;
+  }
+  .reponsive_container .sidenav a {
+    font-size: 18px;
+  }
+}
+
+.login_common_header .link_container  li:hover {
+  color: #ffd500;
+  font-weight: 500;
+}
+.login_common_header .link_container  li {
+  color: #8a8c9e;
+  opacity: 0.63;
+  font-weight: 500;
+}

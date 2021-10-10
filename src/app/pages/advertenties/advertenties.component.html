@@ -1,0 +1,438 @@
+<div class="flex w-full">
+  <!-- left side navigation-->
+  <div
+    class="hidden lg:block xl:block"
+    [ngClass]="className === 'true' ? 'w-2/12' : 'w-1/12'"
+  >
+    <app-dashboard-navigation
+      [className]="className"
+    ></app-dashboard-navigation>
+  </div>
+  <!-- right side page content -->
+  <div
+    class="bg_dashboard_color min_100vh"
+    [ngClass]="
+      className === 'true'
+        ? 'w-full lg:w-10/12 xl:w-10/12'
+        : 'w-full lg:w-11/12 xl:w-11/12'
+    "
+  >
+    <!-- header -->
+    <div>
+      <app-dashboard-header
+        (newItemEvent)="addItem($event)"
+        [item]="currentItem"
+      ></app-dashboard-header>
+    </div>
+    <!-- filters -->
+    <div
+      class="
+        flex flex-col
+        lg:flex-row
+        xl:flex-row
+        justify-between
+        container
+        px-6
+        pt-6
+        mx-auto
+        dashboard_filters_container
+      "
+    >
+      <!-- left side -->
+      <div class="input_container w-full lg:w-7/12 xl:w-7/12">
+        <div class="w-full flex justify-between">
+          <input
+            placeholder="Zoek op onderdeelnummer of titel"
+            class="input px-4 w-full py-2"
+          />
+          <div class="search_icon_container">
+            <img
+              src="../../../assets/images/magnifying-glass@3x.png"
+              class="h_15px absolute"
+            />
+          </div>
+        </div>
+        <div class="py-3 px-1">
+          <div
+            class="
+              py-3
+              px-1
+              flex flex-wrap
+              lg:justify-between
+              xl:justify-between
+            "
+          >
+            <div class="py-1 pr-3">
+              <label class="checkbox_container flex">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                <span class="checkbox_title">Alles</span>
+              </label>
+            </div>
+            <div class="py-1 pr-3">
+              <label class="checkbox_container flex">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                <span class="checkbox_title">Actief</span>
+              </label>
+            </div>
+            <div class="py-1 pr-3">
+              <label class="checkbox_container flex">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                <span class="checkbox_title">Inactief</span>
+              </label>
+            </div>
+            <div class="py-1 pr-3">
+              <label class="checkbox_container flex">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                <span class="checkbox_title">Gearchiveerd</span>
+              </label>
+            </div>
+            <div class="py-1 pr-3">
+              <label class="checkbox_container flex">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                <span class="checkbox_title">Gearchiveerd</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- right side -->
+      <div
+        class="
+          flex
+          justify-between
+          lg:justify-end
+          xl:justify-end
+          w-full
+          lg:w-5/12
+          xl:w-5/12
+          right_side_container right_advertentites
+        "
+      >
+        <div class="advert_button_container w-full lg:w-3/12 xl:w-3/12">
+          <button
+            class="
+              font-bold
+              py-2
+              px-4
+              w-full
+              rounded
+              flex
+              justify-center
+              items-center
+            "
+            (click)="openNav()"
+          >
+            <img
+              src="../../../assets/images/plus@3x.png"
+              alt=""
+              class="h_14px"
+            />
+            <span class="px-2">Nieuw</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="px-6 container mx-auto select_filters">
+      <div class="hr_line"></div>
+      <div
+        class="
+          flex
+          justify-between
+          flex-col
+          lg:flex-row
+          xl:flex-row
+          select_filters_advertenties
+          py-3
+        "
+      >
+        <!-- left side -->
+        <div
+          class="
+            w-full
+            lg:w-5/12
+            xl:w-5/12
+            flex
+            items-center
+            justify-center
+            lg:justify-start
+            xl:justify-start
+            py-2
+            lg:py-0
+            xl:py-0
+          "
+        >
+          <p class="w_fit_content">Kies een status:</p>
+          <div class="px-1">
+            <img
+              src="../../../assets/images/Polygon26@3x.png"
+              class="h_8px"
+              alt=""
+            />
+          </div>
+          <h6 class="w_fit_content">Uitvoeren</h6>
+        </div>
+        <!-- right side -->
+        <div
+          class="
+            w-full
+            lg:w-5/12
+            xl:w-5/12
+            flex
+            items-center
+            justify-center
+            lg:justify-end
+            xl:justify-end
+            py-2
+            lg:py-0
+            xl:py-0
+          "
+        >
+          <p class="w_fit_content">Kies een status:</p>
+          <div class="px-1">
+            <img
+              src="../../../assets/images/Polygon26@3x.png"
+              class="h_8px"
+              alt=""
+            />
+          </div>
+          <h6 class="w_fit_content">Uitvoeren</h6>
+        </div>
+      </div>
+      <div class="hr_line"></div>
+    </div>
+    <!-- table -->
+    <div class="table_container container mx-auto py-4 px-6">
+      <div
+        class="br_radius6 table_responsive_width bg_component_color px-3 py-3"
+      >
+        <!-- header -->
+        <div class="w-full table_header br_radius10 py-3 px-1">
+          <ul class="list-none flex justify-between py-2">
+            <li class="w-1/12"></li>
+            <li class="w-1/12">Actief</li>
+            <li class="w-1/12">Aflbeelding</li>
+            <li class="w-2/12">Titel</li>
+            <li class="w-1/12">€</li>
+            <li class="w-1/12 px-1">Aangemaakt op</li>
+            <li class="w-1/12 px-4">voorraan</li>
+            <li class="w-1/12 px-1">Gearchiveerd</li>
+            <li class="w-1/12 px-5">Gearchiveerd</li>
+            <li class="w-1/12 px-8">Locatie</li>
+            <li class="w-1/12"></li>
+          </ul>
+        </div>
+        <!-- body -->
+        <div class="w-full table_body br_radius10 py-3">
+          <ul
+            class="list-none flex justify-between data py-3"
+            *ngFor="let hero of HEROES; let i = index"
+          >
+            <li class="w-1/12 text-center px-5">
+              <label class="checkbox_container flex">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+              </label>
+            </li>
+            <li class="w-1/12 flex px-1">
+              <label class="checkbox_container flex">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+              </label>
+            </li>
+            <ul class="w-1/12 list-none flex px-1">
+              <li class="dark_circle"></li>
+              <li class="medium_circle"></li>
+              <li class="light_circle"></li>
+            </ul>
+            <li class="w-2/12 px-1">{{ hero.titel }}</li>
+            <li class="w-1/12 px-1">{{ hero.euro }}</li>
+            <li class="w-1/12 px-1">{{ hero.AangemaaktOp }}</li>
+            <li class="w-1/12 px-5">{{ hero.voorraan }}</li>
+            <li class="w-1/12 px-1">{{ hero.Gearchiveerd }}</li>
+            <li class="w-1/12 px-5">{{ hero.Gearchiveerd }}</li>
+            <li class="w-1/12 px-8">{{ hero.Locatie }}</li>
+            <ul
+              class="w-1/12 px-3 flex justify-end py-2 cursor-pointer"
+              (click)="onItemClick(hero.id)"
+            >
+              <li class="open_moreDetail_popup">
+                <img
+                  src="../../../assets/images/dots.png"
+                  alt=""
+                  class="h_7px"
+                />
+              </li>
+              <ul
+                class="more_option_popup margin_top2"
+                [ngClass]="
+                  hero.id === itemId && showPopup ? '' : ' common_popup_id'
+                "
+              >
+                <ul class="list-none content_container">
+                  <li
+                    class="px-5 py-3 cursor-pointer"
+                    routerLink="/advertenties2"
+                  >
+                    Advertenties
+                  </li>
+                  <!-- horizontal line -->
+                  <li class="hr_line"></li>
+                  <li class="px-5 py-3">Facturen</li>
+                </ul>
+              </ul>
+            </ul>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- modal -->
+  <div
+    class="fixed z-10 inset-0 overflow-y-auto modal_container"
+    aria-labelledby="modal-title"
+    role="dialog"
+    aria-modal="true"
+    id="modal1"
+    *ngIf="popup"
+  >
+    <div
+      class="
+        flex
+        items-end
+        justify-center
+        min-h-screen
+        pt-4
+        pb-20
+        px-3
+        text-center
+        sm:block sm:p-0
+      "
+    >
+      <div
+        class="
+          fixed
+          inset-0
+          bg-gray-500 bg-opacity-75
+          transition-opacity
+          cursor-pointer
+        "
+        aria-hidden="true"
+        (click)="closeNav()"
+      ></div>
+      <span
+        class="
+          hidden
+          sm:inline-block sm:align-middle sm:h-screen
+          cursor-pointer
+        "
+        aria-hidden="true"
+        (click)="closeNav()"
+        >&#8203;</span
+      >
+      <div
+        class="
+          inline-block
+          align-bottom
+          bg_darkblue3
+          rounded-lg
+          text-left
+          overflow-hidden
+          shadow-xl
+          transform
+          transition-all
+          sm:my-8 sm:align-middle sm:max-w-lg sm:w-full
+        "
+      >
+        <div class="bg_darkblue3 pt-4 pb-3">
+          <div class="sm:flex sm:items-start">
+            <div class="mt-2 text-center sm:mt-0 sm:text-left">
+              <div class="flex justify-between px-4">
+                <h3
+                  class="text-lg leading-6 font-medium text_gray3"
+                  id="modal-title"
+                >
+                  Weet je het zeker?
+                </h3>
+                <div class="cursor-pointer" (click)="closeNav()">
+                  <img
+                    src="./assets/images/cancel(1)@3x.png"
+                    alt=""
+                    class="h_14px"
+                  />
+                </div>
+              </div>
+              <div class="hr_line mt-2"></div>
+              <div class="py-3 px-4">
+                <p class="text-sm text_gray3 py-2">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tem por incididunt ut labore et dolore magna
+                  aliqua. Ut enim ad minim veniam,qu is nostrud exercitation
+                  ullamco laboris nisi ut aliquip ex ea commod.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="
+            bg_darkblue3
+            px-2
+            pt-1
+            pb-4
+            sm:px-6
+            flex flex-col
+            lg:flex-row
+            justify-center
+            xl:flex-row
+            lg:justify-end
+            xl:justify-end
+          "
+        >
+          <div
+            class="w-full lg:w-3/12 px-0 lg:px-3 xl:px-3 py-2 lg:py-0 xl:py-0"
+          >
+            <button
+              onclick="modal1()"
+              type="button"
+              class="
+                w-full
+                text_yellow text-center
+                border
+                bg_buttonGray
+                rounded-lg
+                br_yellow
+                pl-3
+                pr-4
+                py-2
+              "
+            >
+              Stoppen
+            </button>
+          </div>
+          <div class="w-full lg:w-4/12">
+            <button
+              type="button"
+              class="
+                bg_yellow
+                text-center
+                w-full
+                border
+                rounded-lg
+                br_yellow
+                px-3
+                py-2
+              "
+            >
+              Alles Ophalen
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

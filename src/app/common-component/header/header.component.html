@@ -1,0 +1,75 @@
+<div class="landing_pageHeader_container bg_gray1">
+  <div class="logo_links_container container_auto">
+    <!-- left side -->
+    <div class="left_side">
+      <img src="../../../assets/images/logo2.png" alt="logo" class="h_80px" />
+    </div>
+    <!-- right side -->
+    <div class="right_side_container">
+      <div class="show_hide">
+        <ul
+          class="
+            d_flex
+            justify_between
+            list_none
+            text_darkblue
+            items_center
+            font_medium
+          "
+        >
+          <li class="cursor_pointer">
+            <a
+              [routerLink]="['/']"
+              routerLinkActive="text_yellow2"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Home</a
+            >
+          </li>
+          <li class="cursor_pointer">
+            <a routerLink="/services" routerLinkActive="text_yellow2"
+              >Services</a
+            >
+          </li>
+          <li class="cursor_pointer">
+            <a routerLink="/pricing" routerLinkActive="text_yellow2">Pricing</a>
+          </li>
+          <li class="cursor_pointer">About us</li>
+          <ul class="list_none d_flex items_center">
+            <li class="button_container">
+              <button class="btn1 cursor_pointer" routerLink="/login">
+                Platform Login
+              </button>
+            </li>
+            <li class="button_container">
+              <button
+                class="btn2 bg_darkblue cursor_pointer"
+                routerLink="/dashboard"
+              >
+                Get Started
+              </button>
+            </li>
+          </ul>
+        </ul>
+      </div>
+      <div class="smScreen_show">
+        <div class="w_100per d_flex justify_end hamburger">
+          <span (click)="openNav()">&#9776;</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- reponsive navigation -->
+  <div class="reponsive_container">
+    <div class="sidenav" *ngIf="mySidenav">
+      <a href="javascript:void(0)" class="closebtn" (click)="closeNav()"
+        >&times;</a
+      >
+      <a routerLink="/">Home</a>
+      <a routerLink="/services">Services</a>
+      <a routerLink="/pricing">Pricing</a>
+      <a>About Us</a>
+      <a routerLink="/login">Platform Login</a>
+      <a routerLink="/dashboard">Get Started</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,855 @@
+<div class="flex w-full">
+  <!-- left side navigation-->
+  <div
+    class="hidden lg:block xl:block"
+    [ngClass]="className === 'true' ? 'w-2/12' : 'w-1/12'"
+  >
+    <app-dashboard-navigation
+      [className]="className"
+    ></app-dashboard-navigation>
+  </div>
+  <!-- right side page content -->
+  <div
+    class="bg_dashboard_color min_100vh"
+    [ngClass]="
+      className === 'true'
+        ? 'w-full lg:w-10/12 xl:w-10/12'
+        : 'w-full lg:w-11/12 xl:w-11/12'
+    "
+  >
+    <!-- header -->
+    <div>
+      <app-dashboard-header
+        (newItemEvent)="addItem($event)"
+        [item]="currentItem"
+      ></app-dashboard-header>
+    </div>
+    <!-- title -->
+    <div class="container mx-auto px-7 pt-5 pb-3">
+      <h4 class="text-base text-white">Klant</h4>
+      <p class="text-sm text_darkGray py-2">
+        Zoek de klant op naam of maak een nieuwe klant aan.
+      </p>
+    </div>
+    <!-- filters -->
+    <div
+      class="
+        flex flex-col
+        lg:flex-row
+        xl:flex-row
+        justify-center
+        lg:justify-start
+        container
+        px-6
+        mx-auto
+        dashboard_filters_container
+      "
+    >
+      <!-- left side -->
+      <div class="input_container w-full lg:w-10/12 xl:w-10/12">
+        <div
+          class="
+            flex flex-col
+            lg:flex-row
+            xl:flex-row
+            lg:items-end
+            xl:items-end
+            w-full
+          "
+        >
+          <div class="flex flex-col px-2 w-full lg:w-6/12 xl:w-6/12">
+            <label class="opacity_8 text-white text-base py-2"
+              >Zoek klant</label
+            >
+            <input
+              class="common_form_input w-full px-5 py-3"
+              placeholder="Zoek klant"
+            />
+          </div>
+          <div class="advert_button_container">
+            <button
+              class="
+                font-bold
+                py-3
+                px-4
+                w-full
+                rounded-lg
+                flex
+                bg_yellow
+                justify-center
+                items-center
+              "
+            >
+              <img
+                src="../../../assets/images/plus@3x.png"
+                alt=""
+                class="h_14px"
+              />
+              <span class="px-2">Nieuwe klant</span>
+            </button>
+          </div>
+        </div>
+        <div class="py-3 px-1 w-full lg:w-8/12 xl:w-8/12">
+          <div
+            class="
+              py-3
+              px-1
+              flex flex-wrap
+              lg:justify-between
+              xl:justify-between
+            "
+          >
+            <div class="py-1 pr-2">
+              <h4 class="text_darkGray text-sm">Zoeken op:</h4>
+            </div>
+            <div class="py-1 pr-2">
+              <label class="checkbox_container flex">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                <span class="checkbox_title">Naam</span>
+              </label>
+            </div>
+            <div class="py-1 pr-2">
+              <label class="checkbox_container flex">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                <span class="checkbox_title">Email</span>
+              </label>
+            </div>
+            <div class="py-1 pr-2">
+              <label class="checkbox_container flex">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                <span class="checkbox_title">Telefoonnummer</span>
+              </label>
+            </div>
+            <div class="py-1 pr-2">
+              <label class="checkbox_container flex">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                <span class="checkbox_title">Bedrijfsnaam</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mx-auto px-6">
+      <div
+        class="
+          flex flex-col
+          lg:flex-row
+          xl:flex-row
+          bg_component_color
+          rounded-lg
+          px-3
+          py-3
+          tractie_add_cart_component
+        "
+      >
+        <div
+          class="
+            py-5
+            lg:py-0
+            flex flex-col
+            lg:flex-row
+            xl:flex-row
+            lg:items-start
+            items-center
+            lg:justify-between
+            xl:justify-between
+            w-full
+          "
+        >
+          <!-- left side -->
+          <div class="px-4 w-full lg:w-6/12 xl:w-6/12">
+            <h4 class="text-base text_darkGray">
+              mohammad el hattabli
+              <span class="text_yellow">(particulier)</span>
+            </h4>
+            <div class="py-3">
+              <div class="flex items-center">
+                <div>
+                  <img
+                    src="../../../assets/images/envelope@3x.png"
+                    class="h_14px"
+                    alt=""
+                  />
+                </div>
+                <h4 class="text-sm text_darkGray opacity_8 py-1 px-2">
+                  Koplamp | Enkel
+                </h4>
+              </div>
+              <div class="flex items-center">
+                <div>
+                  <img
+                    src="../../../assets/images/phone-call (1)@3x.png"
+                    class="h_14px"
+                    alt=""
+                  />
+                </div>
+                <h4 class="text-sm text_darkGray opacity_8 py-1 px-3">
+                  34546575767
+                </h4>
+              </div>
+            </div>
+            <h4 class="text-sm text_darkGray opacity_8 py-1">
+              Laaste transactie: 14 June 2021 | 15:33
+            </h4>
+          </div>
+          <!-- right side -->
+          <div
+            class="
+              w-full
+              lg:w-6/12
+              xl:w-6/12
+              h-full
+              flex flex-col
+              lg:flex-row
+              xl:flex-row
+              lg:items-end
+              xl:items-end
+            "
+          >
+            <div class="advert_button_container px-2 py-2 lg:py-1">
+              <button
+                class="
+                  py-3
+                  px-4
+                  w-full
+                  rounded-lg
+                  flex
+                  text-sm
+                  bg_yellow
+                  justify-center
+                  items-center
+                  font-normal
+                "
+                (click)="openNav()"
+              >
+                <span class="px-2">Transactiegeschiedenis</span>
+              </button>
+            </div>
+            <div class="advert_button_container px-2 py-2 lg:py-1">
+              <button
+                class="
+                  py-3
+                  px-4
+                  w-full
+                  rounded-lg
+                  flex
+                  text-sm
+                  bg_yellow
+                  justify-center
+                  items-center
+                  font-normal
+                "
+              >
+                <span class="px-2">Klant bewerken</span>
+              </button>
+            </div>
+            <div class="advert_button_container px-2 py-2 lg:py-1">
+              <button
+                type="button"
+                class="
+                  w-full
+                  text_yellow text-center
+                  border
+                  rounded-lg
+                  br_yellow
+                  pl-3
+                  pr-4
+                  py-2
+                  bg_buttonGray
+                "
+              >
+                Stoppen
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mx-auto px-7 pt-3">
+      <div class="modal_hr_line2"></div>
+    </div>
+    <div
+      class="
+        container
+        mx-auto
+        px-8
+        pt-6
+        flex flex-col
+        lg:flex-row
+        xl:flex-row
+        content_below_header_container
+      "
+    >
+      <!-- left side -->
+      <div class="w-full lg:w-8/12">
+        <div class="heading_button">
+          <h4
+            class="
+              font-bold
+              text-white text-lg text-center
+              lg:text-left
+              xl:text-left
+            "
+          >
+            Producten
+          </h4>
+          <p class="text_darkGray py-3 lg:text-left xl:text-left text-sm">
+            Zoek het product op naam of onderdeelnummer of gebruik de QR-code
+            scanner. Voeg deze vervolgens toen aan de winkelwagen.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container mx-auto px-6 py-2">
+      <!-- 1st input-->
+      <div>
+        <div class="px-2 w-full">
+          <label class="opacity_8 text-white text-base py-2">Producten</label>
+        </div>
+        <div class="flex py-2 w-full justify-between items-center">
+          <div class="px-2 w_95per">
+            <input
+              class="common_form_input w-full px-5 py-3"
+              placeholder="Type here"
+            />
+          </div>
+          <div
+            class="
+              bg_yellow
+              cursor-pointer
+              hover:bg-yellow-400
+              cursor-pointer
+              rounded-lg
+              px-3
+              my-2
+              lg:my-0
+              xl:my-0
+              py-3
+              h_fit_content
+              mr-2
+            "
+          >
+            <h4 class="text-center text-base text-white opacity_8">
+              <img src="./assets/images/qr-code@3x.png" class="h_21px" alt="" />
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mx-auto px-6">
+      <div class="px-1 w-full lg:w-8/12 xl:w-8/12">
+        <div class="py-1 px-1 flex flex-wrap">
+          <div class="py-1 pr-3">
+            <h4 class="text_darkGray text-sm">Zoeken op:</h4>
+          </div>
+          <div class="py-1 pr-2">
+            <label class="checkbox_container flex">
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+              <span class="checkbox_title">Adverential</span>
+            </label>
+          </div>
+          <div class="py-1 pr-2">
+            <label class="checkbox_container flex">
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+              <span class="checkbox_title">Referentienummer`</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mx-auto px-6 py-5">
+      <div
+        class="
+          flex flex-col
+          lg:flex-row
+          xl:flex-row
+          bg_component_color
+          rounded-lg
+          px-3
+          py-3
+          tractie_add_cart_component
+        "
+      >
+        <!-- left side -->
+        <div
+          class="
+            w-3/12
+            lg:w-2/12
+            xl:w-2/12
+            rounded-lg
+            py-12
+            h-100
+            px-3
+            bg_component_color2
+          "
+        ></div>
+        <!-- right side -->
+        <div
+          class="
+            py-5
+            lg:py-0
+            flex flex-col
+            lg:flex-row
+            xl:flex-row
+            lg:items-start
+            items-center
+            lg:justify-between
+            xl:justify-between
+            w-full
+            lg:w-10/12
+            xl:w-10/12
+          "
+        >
+          <!-- left side -->
+          <div class="px-0 lg:px-4 w-full lg:w-6/12 xl:w-6/12">
+            <h4 class="text-base text-white">
+              VW Polo 2G Koplamp H& Rechts 2efergevgrfb
+            </h4>
+            <h4 class="text-md text_yellow opacity_8 py-1">2efergevgrfb</h4>
+            <h4 class="text-sm text_darkGray opacity_8 pt-2 pb-3">
+              Koplamp | Enkel
+            </h4>
+            <h4 class="text-sm text_darkGray opacity_8 py-1">Vooraad: 1</h4>
+            <h4 class="text-sm text_darkGray opacity_8 py-1">Verkopen : 0</h4>
+            <h4 class="text-sm text_darkGray opacity_8 py-1">Locatie: -</h4>
+          </div>
+          <!-- right side -->
+          <div
+            class="
+              w-full
+              lg:w-6/12
+              xl:w-6/12
+              h-full
+              flex flex-col
+              lg:flex-row
+              xl:flex-row
+              lg:items-end
+              xl:items-end
+            "
+          >
+            <div
+              class="flex flex-col lg:flex-row px-2 w-full lg:w-8/12 xl:w-8/12"
+            >
+              <input
+                class="
+                  my-2
+                  lg:my-0
+                  xl:py-0
+                  common_form_input
+                  w-full
+                  mx-0
+                  lg:mx-2
+                  xl:mx-2
+                  lg:w-4/12
+                  xl:w-4/12
+                  px-5
+                  py-3
+                "
+                placeholder="1"
+              />
+              <input
+                class="common_form_input w-full lg:w-8/12 xl:w-8/12 px-5 py-3"
+                placeholder="Zoek klant"
+              />
+            </div>
+            <div class="advert_button_container px-2 py-2 lg:py-1">
+              <button
+                class="
+                  py-3
+                  px-4
+                  w-full
+                  rounded
+                  flex
+                  text-sm
+                  bg_yellow
+                  justify-center
+                  items-center
+                "
+              >
+                <span class="px-2">Add to cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- table -->
+    <div class="container mx-auto px-6">
+      <div class="table_container container mx-auto py-4 px-2 w-full">
+        <div
+          class="
+            br_radius6
+            table_responsive_width
+            bg_component_color
+            px-3
+            py-3
+            w-full
+          "
+        >
+          <!-- header -->
+          <div class="w-full table_header br_radius10 py-3 px-1">
+            <ul class="list-none flex justify-between py-2">
+              <li class="w-3/12 px-1">Product</li>
+              <li class="w-2/12">Antal</li>
+              <li class="w-3/12">Prijis</li>
+              <li class="w-2/12 px-1">BTW</li>
+              <li class="w-2/12"></li>
+            </ul>
+          </div>
+          <!-- body -->
+          <div class="w-full table_body br_radius10 py-3">
+            <ul
+              class="list-none flex justify-between data py-3"
+              *ngFor="let hero of HEROES2; let i = index"
+            >
+              <li class="w-3/12 px-2">{{ hero.product }}</li>
+              <li class="w-2/12 px-1">{{ hero.antal }}</li>
+              <li class="w-3/12 px-1">{{ hero.prijis }}</li>
+              <li class="w-2/12 px-1">{{ hero.btw }}</li>
+              <li class="w-2/12 flex">
+                <button
+                  class="
+                    rounded
+                    flex
+                    text-sm
+                    py-2
+                    px-2
+                    text-black
+                    bg_yellow
+                    cursor-pointer
+                  "
+                >
+                  <img
+                    src="../../../assets/images/cart2.png"
+                    alt=""
+                    class="h_22px"
+                  />
+                </button>
+                <button
+                  class="
+                    rounded
+                    mx-2
+                    flex
+                    text-sm
+                    py-2
+                    px-2
+                    text-black
+                    bg_yellow
+                    cursor-pointer
+                  "
+                >
+                  <img
+                    src="../../../assets/images/remove-from-cart.png"
+                    alt=""
+                    class="h_22px"
+                  />
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="modal_hr_line2"></div>
+          <!-- button -->
+          <div class="flex justify-center py-5">
+            <button
+              class="
+                rounded
+                flex
+                text-sm
+                py-3
+                px-5
+                text-black
+                bg_yellow
+                cursor-pointer
+              "
+            >
+              Winkelwagen
+            </button>
+          </div>
+          <!-- total detail -->
+          <div class="py-5">
+            <div
+              class="
+                flex flex-col
+                lg:flex-row
+                xl:flex-row
+                bg_component_color
+                rounded-lg
+                px-3
+                py-3
+                tractie_add_cart_component
+              "
+            >
+              <!-- left side -->
+              <div class="py-5 lg:py-0 flex justify-end w-full">
+                <!-- left side -->
+                <div class="px-0 lg:px-4 text-right">
+                  <h4 class="text-base text-white">SubTotaal € 399,00</h4>
+                  <h4 class="text-sm text_yellow opacity_8 py-1">
+                    Korting € 399,00
+                  </h4>
+                  <h4 class="text-md text_darkGray opacity_8 py-1 m-0">
+                    BTW € 83.79
+                  </h4>
+                  <h4 class="text-md text_darkGray opacity_8 m-0 py-1">
+                    Totaal € 482,79
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mx-auto px-6">
+      <div class="modal_hr_line2"></div>
+      <div class="py-5">
+        <label class="text-white px-2">Interne opmerkingen</label>
+        <div class="flex py-2 flex-col lg:flex-row xl:flex-row">
+          <div class="w-full lg:w-10/12 xl:w-10/12">
+            <textarea
+              rows="5"
+              class="common_form_input w-full px-5 py-3"
+              placeholder="Bijvoorbeeld 3 maanden"
+            ></textarea>
+          </div>
+          <div class="w-full lg:w-2/12 xl:w-2/12 px-3">
+            <button
+              class="
+                rounded
+                flex
+                w-full
+                text-sm
+                py-3
+                my-1
+                px-5
+                text-black
+                bg_yellow
+                cursor-pointer
+                text-center
+              "
+            >
+              Contante Betaling
+            </button>
+            <button
+              class="
+                rounded
+                flex
+                w-full
+                text-sm
+                py-3
+                my-1
+                px-5
+                text-black
+                bg_yellow
+                cursor-pointer
+                text-center
+              "
+            >
+              Pin Betaling
+            </button>
+            <button
+              class="
+                rounded
+                flex
+                w-full
+                text-sm
+                py-3
+                my-1
+                px-5
+                text-black
+                bg_yellow
+                cursor-pointer
+                text-center
+              "
+            >
+              Op Rekening
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mx-auto px-7 pt-3">
+      <div class="modal_hr_line2"></div>
+    </div>
+    <div
+      class="
+        container
+        mx-auto
+        px-8
+        pt-6
+        flex flex-col
+        lg:flex-row
+        xl:flex-row
+        content_below_header_container
+      "
+    >
+      <!-- left side -->
+      <div class="w-full">
+        <div class="heading_button">
+          <h4
+            class="
+              font-bold
+              text-white text-lg text-center
+              lg:text-left
+              xl:text-left
+            "
+          >
+            Winkelwagen
+          </h4>
+          <p class="text_darkGray py-3 lg:text-left xl:text-left text-sm">
+            Overzicht van alle geselecteerde producten. Je kunt de korting
+            aanpassen en de klant contant of per pin laten afrekenen. De klant
+            ontvangt zijn factuur per e-mail als de transactie is afgerond.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container mx-auto px-6 py-5">
+      <div class="bg_component_color rounded-lg px-3 py-12">
+        <div class="flex w-full justify-center">
+          <img src="../../../assets/images/cart.png" class="h_130px" alt="" />
+        </div>
+        <div class="pt-10 w-full justify-center">
+          <h4 class="text-white text-center">Winkelwagen is leeg</h4>
+          <p class="text_darkGray text-center py-3">
+            Voeg producten toe om de transactie te starten
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- modal -->
+  <div
+    class="fixed z-10 inset-0 overflow-y-auto modal_container"
+    aria-labelledby="modal-title"
+    role="dialog"
+    aria-modal="true"
+    id="modal1"
+    *ngIf="popup"
+  >
+    <div
+      class="
+        flex
+        items-end
+        justify-center
+        min-h-screen
+        pt-4
+        pb-20
+        px-3
+        text-center
+        sm:block sm:p-0
+      "
+    >
+      <div
+        class="
+          fixed
+          inset-0
+          bg-gray-500 bg-opacity-75
+          transition-opacity
+          cursor-pointer
+        "
+        aria-hidden="true"
+        (click)="closeNav()"
+      ></div>
+      <span
+        class="
+          hidden
+          sm:inline-block sm:align-middle sm:h-screen
+          cursor-pointer
+        "
+        aria-hidden="true"
+        (click)="closeNav()"
+        >&#8203;</span
+      >
+      <div
+        class="
+          inline-block
+          align-bottom
+          bg_darkblue3
+          rounded-lg
+          text-left
+          overflow-hidden
+          shadow-xl
+          transform
+          transition-all
+          sm:my-8 sm:align-middle sm:max-w-lg sm:w-full
+        "
+      >
+        <div class="bg_darkblue3 pt-4 pb-3 w-full">
+          <div class="sm:flex sm:items-start w-full">
+            <div class="mt-2 text-center sm:mt-0 sm:text-left w-full">
+              <div class="flex justify-end px-4 w-full">
+                <div class="cursor-pointer" (click)="closeNav()">
+                  <img
+                    src="./assets/images/cancel(1)@3x.png"
+                    alt=""
+                    class="h_14px"
+                  />
+                </div>
+              </div>
+              <div class="hr_line mt-2"></div>
+              <div class="table_container container mx-auto py-4 px-2 w-full">
+                <div
+                  class="
+                    br_radius6
+                    table_responsive_width
+                    bg_component_color
+                    px-3
+                    py-3
+                    w-full
+                  "
+                >
+                  <!-- header -->
+                  <div class="w-full table_header br_radius10 py-3 px-1">
+                    <ul class="list-none flex justify-between py-2">
+                      <li class="w-3/12 px-1">Datum</li>
+                      <li class="w-5/12 px-4">Product</li>
+                      <li class="w-2/12 px-1">Bedrag</li>
+                      <li class="w-2/12">Acties</li>
+                    </ul>
+                  </div>
+                  <!-- body -->
+                  <div class="w-full table_body br_radius10 py-3">
+                    <ul
+                      class="list-none flex justify-between data py-3"
+                      *ngFor="let hero of HEROES; let i = index"
+                    >
+                      <li class="w-3/12 px-1">{{ hero.datum }}</li>
+                      <li class="w-5/12 px-1">{{ hero.product }}</li>
+                      <li class="w-2/12 px-1">{{ hero.bedrag }}</li>
+                      <li class="w-2/12">
+                        <button
+                          class="
+                            w-full
+                            rounded
+                            flex
+                            text-sm
+                            py-2
+                            px-2
+                            text-black
+                            bg_yellow
+                            cursor-pointer
+                          "
+                        >
+                          Bekijken
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
